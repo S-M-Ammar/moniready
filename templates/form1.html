@@ -285,28 +285,7 @@ form .page .btns button.next{
 </div>
 </div>
 </div>
-<div class="form-outer">
-<form id="user_form" method="POST" action="end.html">
-         
-  <div class="page slide-page">
-            
-    <div class="title">Basic Info:</div>
-    <div class="field">
-      <div class="label">First Name</div>
-          <input type="text" name="firstName" id="firstName" >
-      </div>
-    <div class="field">
-        <div class="label">Last Name</div>
-        <input type="text" name="lastName" id="lastName" >
-     </div>
-    <div class="field">
-      <input class="firstNext next" style="background-color:palevioletred;" type="submit" value="Next"></button>        
-    </div>
-  </div>
-</form>
-
-
-<!-- </form> -->
+<div class="form-outer" id="outerForm">
 </div>
 </div>
 <!-- Somehow I got an error, so I comment the script tag, just uncomment to use -->
@@ -391,89 +370,130 @@ form .page .btns button.next{
 // })
 
 let question_counter = 1;
-const userForm_1 = document.getElementById("user_form")
-userForm_1.addEventListener("submit",function(e){
+const outerForm = document.getElementById("outerForm")
+var userForm_1;
+var userForm_2;
+var userForm_3;
+var userForm_4;
+var userForm_5;
+
+let check = false;
+
+let user_info_dict = {}
+Q1()
+
+function Q1(){
+  outerForm.innerHTML = '<form id="userForm_1"><div class="page slide-page"><div class="title">Basic Info:</div><div class="field"><div class="label">First Name</div><input type="text" name="firstName" id="firstName" ></div><div class="field"><div class="label">Last Name</div><input type="text" name="lastName" id="lastName" ></div><div class="field"><input class="firstNext next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_1 = document.getElementById("userForm_1")
+  userForm_1.addEventListener("submit",function(e){
   e.preventDefault()
-  if(question_counter==1){
-    let firstName = document.getElementById("firstName");
-    let lastName = document.getElementById("lastName");
-    if(firstName.value=="" || lastName.value==""){
-       alert("Kindly fill all boxes")
-    }
-    else{
-      while(userForm_1.firstChild){
-        userForm_1.removeChild(userForm_1.firstChild)
-      }
+  let first_name = document.getElementById("firstName");
+  let last_name = document.getElementById("lastName");
+  if(first_name.value==""){
+    alert("Enter First Name");
+  }
+  else if(last_name.value==""){
+    alert("Enter last Name");
+  }
+  else{
+    user_info_dict['firstName'] = first_name.value
+    user_info_dict['lastName'] = last_name.value
+    if(question_counter==1){
       Q2()
     }
   }
-  if(question_counter==2){
-   
-  }
-  
 })
 
+}
+
 function Q2(){
-  let div_page = document.createElement("div")
-  div_page.classList.add("page")
+ outerForm.innerHTML=""
+ outerForm.innerHTML = '<form id="userForm_2" action="end.html" method="POST"><div class="page"><div class="title">Gender</div><div class="field"><input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale"><label for="male">Male</label>  <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"><label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers"><label for="others">Others</label></div><div class="field btns"><input class="prev-1 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-1 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+ userForm_2 = document.getElementById("userForm_2")
+ let variables = document.createElement("input")
+ variables.type = "hidden"
+ variables.value = JSON.stringify(user_info_dict)
+ variables.name = "params"
+ userForm_2.appendChild(variables)
+//  console.log(JSON.stringify(user_info_dict))
+ question_counter +=1
+ userForm_2.addEventListener("submit",function(e){
+    e.preventDefault()
+    if(check==true){
+      userForm_2.submit()
+    }
+    let radio_1  = document.getElementById("radioMale");
+     let radio_2  = document.getElementById("radioFemale");
+    let radio_3  = document.getElementById("radioOthers");
+    if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false){
+      alert("Select Gender")
+    }
+    else{
+      user_info_dict['gender'] = "Male"
+      check = true
+      userForm_2.submit()
+    }
+ })
+}
 
-  // let div_title = document.createElement("div")
-  // div_title.classList.add("title")
-  // div_title.innerHTML="Gender"
-  
-  // let div_field_1 = document.createElement("div")
-  // div_field_1.classList.add("field")
-
-  // let input_1 = document.createElement("input")
-  // input_1.style.height = "30px"
-  // let input_2 = document.createElement("input")
-  // input_2.style.height = "30px"
-  // let input_3 = document.createElement("input")
-  // input_3.style.height = "30px"
-
-  // input_1.id = "radioMale"
-  // input_2.id = "radioFemale"
-  // input_3.id = "radioOthers"
-
-  // input_1.value = "Male"
-  // input_2.value = "Female"
-  // input_3.value = "Others"
-
-  // div_page.appendChild(div_title)
-
-  // userForm_1.appendChild(div_page)
-  
-  let code = '<div class="title">' + 'Gender</div>' + '<div class="field"> <input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale">'+
-              '<label for="male">Male</label> <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"> <label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers">'+
-              '<label for="others">Others</label> </div>' + '<div class="field btns"> <input class="prev-1 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"></input> <input class="next-1 next"style="background-color:palevioletred;" type="submit" value="Next""></button>  </div> </div>'
-  div_page.innerHTML = code
-  userForm_1.appendChild(div_page)
+function Q3(){
   question_counter +=1
+
+  // outerForm.innerHTML=""
+  // let form3 = document.getElementById("userForm_3")
+  // // form3['information'] = user_info_dict
+  // form3.submit()
+
+  // var xhr = new XMLHttpRequest();
+  // var url = "http://127.0.0.1:5000/end.html";
+  // xhr.open("POST", url, true);
+  // xhr.setRequestHeader("Content-Type", "application/json"); 
+  // var data = JSON.stringify(user_info_dict);
+  // xhr.send(data);
+
+}
+
+
+function P1(){
+  outerForm.innerHTML=""
+  outerForm.innerHTML = '<form id="userForm_1"><div class="page slide-page"><div class="title">Basic Info:</div><div class="field"><div class="label">First Name</div><input type="text" name="firstName" id="firstName"></div><div class="field"><div class="label">Last Name</div><input type="text" name="lastName" id="lastName"></div><div class="field"><input class="firstNext next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_1 = document.getElementById("userForm_1")
+  document.getElementById('firstName').value = user_info_dict['firstName']
+  document.getElementById('lastName').value = user_info_dict['lastName']
+  userForm_1.addEventListener("submit",function(e){
+    e.preventDefault()
+    let first_name = document.getElementById("firstName");
+    let last_name = document.getElementById("lastName");
+    if(first_name.value==""){
+     alert("Enter First Name");
+    }
+    else if(last_name.value==""){
+      alert("Enter last Name");
+    }
+    else{
+     user_info_dict['firstName'] = first_name.value
+     user_info_dict['lastName'] = last_name.value
+    if(question_counter==1){
+      Q2()
+    }
+  }
+
+ })
 }
 
 function funPrevious(){
+  console.log(question_counter)
   if(question_counter==2){
-    while(userForm_1.firstChild){
-        userForm_1.removeChild(userForm_1.firstChild)
-      }
-    
+      question_counter -=1
+      P1()
+  }
+  else if(question_counter==3){
+
+  }
+  else if(question_counter==4){
+
   }
 }
-// var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-// if (isMobile) {
-//   console.log("Mobile here")
-// }
-// else{
-//   console.log("not mobile")
-// }
-
-//*********************
-
-//**********************
-
-//***********************
-
-//**********************
 
 </script>
 

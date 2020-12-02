@@ -3,6 +3,7 @@ from flask import Flask,render_template,request
 import os
 import pickle
 import numpy as np
+import json
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -160,6 +161,13 @@ def form_2():
 def end_page():
 
     if(request.method=="POST"):
+        print(request.form['params'])
+        print(type(request.form['params']))
+        x = json.dumps(request.form['params'])
+        y = json.loads(x)
+        print(y)
+        return render_template('end.html')
+    '''
         check = check_application_for_rejection(request.form['home_salary'],request.form['income_additional'],request.form['mortgage_value'],request.form['food_value'],request.form['transport_value'],request.form['light_expenditure'],request.form['water_value'],request.form['grooming_value'],request.form['entertainment_value'],request.form['current_loan_payment'],request.form['kids_value'])
         if(check ==  False):
           pay_check = prediction_by_model(request.form['user_age'],request.form['moneyBorrow'],request.form['light_expenditure'],request.form['Marital Status'],request.form['occupation_tag'],request.form['working_with_employee'],request.form['Residential Status'],request.form['present address'],request.form['kids'],request.form['LoanPurpose'])
@@ -202,8 +210,7 @@ def end_page():
                 print("your message has been sent")
             except:
                 print("an error occured")
-        
-    return render_template('end.html')
+    '''
 
 
 if __name__ == '__main__':
