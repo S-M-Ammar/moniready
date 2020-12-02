@@ -286,8 +286,8 @@ form .page .btns button.next{
 </div>
 </div>
 <div class="form-outer">
-        <!-- <form id="user_form" method="POST" action="end.html"> -->
-          <form id="QForm1">
+        <form id="user_form" method="POST" action="end.html">
+          <!-- <form id="QForm1"> -->
           <div class="page slide-page">
             
             <div class="title">
@@ -303,11 +303,13 @@ Last Name</div>
 <input type="text" name="lastName" id="lastName" >
             </div>
 <div class="field">
-              <input class="firstNext next" type="submit"></button>
+              <input class="firstNext next" type="submit" value="Next"></button>
               
         </div>
   </div>
-</form>
+<!-- </form> -->
+
+<!-- <form id="QForm2"> -->
 <div class="page">
             <div class="title">
 Gender</div>
@@ -327,10 +329,12 @@ Gender</div>
             </div>
  -->
 <div class="field btns">
-              <button class="prev-1 prev">Previous</button>
-              <!-- <button class="next-1 next"type="submit">Next</button> -->
+              <input class="prev-1 prev">Previous</button>
+              <input class="next-1 next"type="submit" value="Next"></button>
             </div>
 </div>
+</form>
+
 <div class="page">
             <div class="title">
 Nationality</div>
@@ -1023,7 +1027,7 @@ Do you have a moniready referrer code?</div>
 </div>
 
 
-<!-- </form> -->
+</form>
 </div>
 </div>
 <!-- Somehow I got an error, so I comment the script tag, just uncomment to use -->
@@ -1108,11 +1112,20 @@ Do you have a moniready referrer code?</div>
 // })
 
 
-const userForm = document.getElementById("QForm1")
-userForm.addEventListener("submit",function(e){
+const userForm_1 = document.getElementById("user_form")
+userForm_1.addEventListener("submit",function(e){
   e.preventDefault()
-  alert("got it")
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  if(firstName.value=="" || lastName.value==""){
+    alert("Fill all the boxes")
+  }
+  else{
+    slidePage.style.marginLeft = "-25%";
+  }
 })
+
+
 
 
 
