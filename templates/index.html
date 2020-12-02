@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOAN APPLICATION</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="../static/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../static/vendor/jquery-ui/jquery-ui.min.css">
+
+    <!-- Main css -->
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+
+
+    <style>
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #fff;
+  background-image: url("../static/images/money.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-position: center center;
+  font-weight: 600;
+  font-family: Poppins;
+  margin: 0px; }
+
+        .slidecontainer {
+            width: auto;
+            margin: auto;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .slider:hover {
+            opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        
+        .slider1 {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .slider1:hover {
+            opacity: 1;
+        }
+        
+        .slider1::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        
+        .slider1::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        #submit{
+            width: 690px;
+            height: 40px;
+            border-radius: 10px;
+            color: black;
+            background-color: #2fcab0;
+            font-size: large;
+            color: white;
+            justify-content: center;
+            border-color: white;
+        }
+
+        #submit:hover{
+            cursor: pointer;
+            color: white;
+            background-color: gold;
+            border-color: white;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="main">
+        
+        <div class="header">
+            <a href="index.html">
+                <img src="../static/images/logo.png" alt="" style="background-color: blue; margin: 30px;width: 150px;height: 70px;">
+            </a>
+        </div>
+        <div class="et_pb_section et_pb_section_2 et_section_regular" >
+<div class="et_pb_row et_pb_row_0 et_pb_row_fullwidth et_pb_gutters1">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p style="text-align: center;"><span style="color: #2fcab0";><span style="font-size: 42px;"><b>Everything </b>done online!</span></span><span style="font-size: x-large;"> </span></p></div>
+</div> <!-- .et_pb_text -->
+</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_code et_pb_code_0">
+</div> <!-- .et_pb_code --><div class="et_pb_module et_pb_code et_pb_code_1">
+</div> <!-- .et_pb_code --><div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p style="text-align: center;"><span style="font-size: x-large;"><span style="font-size: xx-large; color: #2fcab0;"><strong>How Much</strong> Do You Need ?</span> </span></p></div>
+
+<div class="slidecontainer">
+
+    <div class="sliders" style="width: 50%; margin: 0 auto;">
+        <div style="color: black;">
+            <span style="font-size: large;"><$<span>20000></span></span>
+            <span style="color: rgb(128, 0, 0); font-size: x-large">$<span id="demo">20000</span></span>
+            <span style="font-size: large;"><$<span id="demo">100000></span></span>
+        </div>
+        <input type="range" min="20" max="100" value="20" class="slider" id="myRange">
+
+        
+        <br><br>
+        <form method="POST" action="form.html">
+        <div style="color: black;">
+            <span style="font-size: large;"><1<span>Month></span></span>
+            <span style="color:  rgb(128, 0, 0); font-size: large;"><span id="demo2"></span><span>Month</span></span>
+            <span style="font-size: large;"><6<span id="demo2">Months></span></span>
+        </div>
+        <input type="range" min="1" max="6" value="1" class="slider1" id="myRange1" style="height: 10px;">
+        <p style="font-size: x-large;color: black;">Your Repayments are $ <span id="loan"></span> every month </p>
+        <br>
+        <div class="submitContainer" style="width: 100%; height: 100px; position: relative;">
+            <!-- <button  id="submit" value="NEXT"><strong>Apply Now</strong></button> -->
+            <input type="hidden" id="spanAmount" name=payment value="">
+            <input class="applynow" type="submit" id="submit" value="Apply Now" style="height: 51px;width: 100%; margin: 0 auto;">
+        </div>
+            
+        
+        </form>
+    </div>
+
+</div>
+
+<script>
+        var slider = document.getElementById("myRange");
+        var slider2 = document.getElementById("myRange1");
+        var output = document.getElementById("demo");
+        var output2 = document.getElementById("demo2");
+        var loan = document.getElementById("loan");
+        var paymentVar = document.getElementById("spanAmount")
+        output.innerHTML = slider.value * 1000;
+        output2.innerHTML =slider2.value;
+
+
+
+        slider2.oninput = function() {
+            output2.innerHTML = this.value;
+            this.style.background = `linear-gradient(to right, green 0%, green ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 100%)`
+
+            caculateLoan();
+        }
+
+
+
+        slider.oninput = function() {
+
+            // prevValue = output.innerHTML;
+
+            // console.log('new value mod');
+
+            newValue = this.value;
+
+            //console.log(newValue % 5000);
+
+            //if (newValue % 5000 <= 4999 && newValue % 5000 >= 4000) {
+            //console.log('i am in ');
+
+
+
+
+            output.innerHTML = nextValidValue(parseInt(newValue));
+
+
+
+            this.style.background = `linear-gradient(to right, green 0%, green ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 100%)`
+
+
+
+            caculateLoan();
+            // }
+
+        }
+
+        function caculateLoan() {
+            var amount = parseInt(output.innerHTML);
+
+            var months = parseInt(output2.innerHTML);
+
+
+            var payment = (amount / months) + 3200 + findAmountFactor(amount);
+
+            loan.innerHTML = Math.round(payment);
+            paymentVar.value = Math.round(payment);
+
+        }
+
+        function findAmountFactor(amount) {
+
+
+
+
+            var rem = amount - 20000;
+
+            if (rem == 0) return 0;
+
+            let factor = rem / 5000;
+
+            return factor * 800;
+
+        }
+
+
+        function nextValidValue(val) {
+
+            console.log('value we received is ');
+
+            console.log(val);
+
+            for (val; val % 5 != 0; val++) {
+                console.log('inside loop');
+            }
+            return val * 1000;
+        }
+    </script>
+</div>
+</div> <!-- .et_pb_column -->
+</div> <!-- .et_pb_row -->
+</div>
+</div>
+
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
