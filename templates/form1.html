@@ -286,7 +286,7 @@ form .page .btns button.next{
 </div>
 </div>
 <div class="form-outer">
-        <form id="user_form">
+        <form id="user_form" method="POST" action="end.html">
           <div class="page slide-page">
             <div class="title">
 Basic Info:</div>
@@ -324,8 +324,8 @@ Gender</div>
             </div>
  -->
 <div class="field btns">
-              <button class="prev-1 prev" type="button">Previous</button>
-              <button class="next-1 next" type="button">Next</button>
+              <button class="prev-1 prev">Previous</button>
+              <button class="next-1 next"type="submit">Next</button>
             </div>
 </div>
 <div class="page">
@@ -351,7 +351,7 @@ Gender</div>
             </div> -->
 <div class="field btns">
               <button class="prev-2 prev">Previous</button>
-              <button class="next-2 next">Next</button>
+              <button class="next-2 next" type="submit">Next</button>
             </div>
 </div>
 <div class="page">
@@ -365,8 +365,8 @@ Enter your age</div>
             </div>
             <br>
 <div class="field btns">
-              <button class="prev-3 prev">Previous</button>
-              <button class="next-3 next">Next</button>
+              <button class="prev-3 prev" >Previous</button>
+              <button class="next-3 next" type="submit">Next</button>
             </div>
 </div>
 
@@ -398,7 +398,7 @@ Marital Status</div>
             </div>
 <div class="field btns">
               <button class="prev-4 prev">Previous</button>
-              <button class="next-4 next">Next</button>
+              <button class="next-4 next" type="submit">Next</button>
             </div>
 </div>
 
@@ -1105,16 +1105,11 @@ Do you have a moniready referrer code?</div>
 // })
 
 
-
-
-
-// const lastNameTag = document.getElementById("lastName");
-// lastNameTag.addEventListener("keydown",function(event){
-
-//     if(e.keyCode===13){
-//       alert("got it")
-//     }
-// })
+const userForm = document.getElementById("user_form")
+userForm.addEventListener("submit",function(e){
+  e.preventDefault()
+  alert("got it")
+})
 
 
 
@@ -1709,7 +1704,8 @@ submitBtn.addEventListener("click", function(){
   }
   else{
    let form = document.getElementById("user_form") 
-   form.submit()
+  //  form.submit()
+  
   //  setTimeout(function(){
   //   alert("Your Form Successfully Signed up");
   //   location.reload();
