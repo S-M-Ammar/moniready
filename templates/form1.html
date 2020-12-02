@@ -1256,462 +1256,462 @@ let current = 1;
 
 // });
 
-nextBtnFourth.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("age_field")
-  if(number.value<=0 || number.value=="" || number.value<18 || number.value>=100){
-      alert("Age must be greater or equal to 18 and less than 100")
-  }
-  else{
-    slidePage.style.marginLeft = "-100%";
-  }
+// nextBtnFourth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("age_field")
+//   if(number.value<=0 || number.value=="" || number.value<18 || number.value>=100){
+//       alert("Age must be greater or equal to 18 and less than 100")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-100%";
+//   }
   
-});
+// });
 
-nextBtnFifth.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_married");
-  let radio_2  = document.getElementById("radio_single");
-  let radio_3  = document.getElementById("radio_divorced");
-  let radio_4  = document.getElementById("radio_widowed");
-  let radio_5  = document.getElementById("radio_ms_others");
-  let radio_6  = document.getElementById("radio_living_together");
-  if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-125%";
-  }
-});
+// nextBtnFifth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_married");
+//   let radio_2  = document.getElementById("radio_single");
+//   let radio_3  = document.getElementById("radio_divorced");
+//   let radio_4  = document.getElementById("radio_widowed");
+//   let radio_5  = document.getElementById("radio_ms_others");
+//   let radio_6  = document.getElementById("radio_living_together");
+//   if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-125%";
+//   }
+// });
 
-nextBtnSixth.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("EmploymentStatus")
-  if(select_tag.value==""){
+// nextBtnSixth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("EmploymentStatus")
+//   if(select_tag.value==""){
 
-    alert("Select One Option")
-  }
-  else{
+//     alert("Select One Option")
+//   }
+//   else{
 
-    slidePage.style.marginLeft = "-150%";
-  }
+//     slidePage.style.marginLeft = "-150%";
+//   }
   
-});
+// });
 
-nextBtnSeventh.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("occupationSelect")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-175%";
-  }
-});
+// nextBtnSeventh.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("occupationSelect")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-175%";
+//   }
+// });
 
 
-nextBtnEighted.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_employee_working_1");
-  let radio_2  = document.getElementById("radio_employee_working_2");
-  let radio_3  = document.getElementById("radio_employee_working_3");
-  let radio_4  = document.getElementById("radio_employee_working_4");
-  if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-200%";
-  }
+// nextBtnEighted.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_employee_working_1");
+//   let radio_2  = document.getElementById("radio_employee_working_2");
+//   let radio_3  = document.getElementById("radio_employee_working_3");
+//   let radio_4  = document.getElementById("radio_employee_working_4");
+//   if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-200%";
+//   }
   
-});
+// });
 
-nextBtnNinth.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("ResidentialSelect")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-225%";
-  }
+// nextBtnNinth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("ResidentialSelect")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-225%";
+//   }
   
-});
+// });
 
-nextBtnTenth.addEventListener("click", function(event){
-  event.preventDefault();
-  let address = document.getElementById("user_address");
-  if(address.value==""){
-    alert("Enter Address. Invalid Address will not be accepted in future")
-  }
-  else{
-    slidePage.style.marginLeft = "-250%";
-  }
-});
+// nextBtnTenth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let address = document.getElementById("user_address");
+//   if(address.value==""){
+//     alert("Enter Address. Invalid Address will not be accepted in future")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-250%";
+//   }
+// });
 
-nextBtnEleventh.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_address_1");
-  let radio_2  = document.getElementById("radio_address_2");
-  let radio_3  = document.getElementById("radio_address_3");
-  let radio_4  = document.getElementById("radio_address_4");
-  if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-275%";
-  }
+// nextBtnEleventh.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_address_1");
+//   let radio_2  = document.getElementById("radio_address_2");
+//   let radio_3  = document.getElementById("radio_address_3");
+//   let radio_4  = document.getElementById("radio_address_4");
+//   if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-275%";
+//   }
 
-});
+// });
 
-nextBtnTwelveth.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_kids_1");
-  let radio_2  = document.getElementById("radio_kids_2");
-  let radio_3  = document.getElementById("radio_kids_3");
-  let radio_4  = document.getElementById("radio_kids_4");
-  if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-300%";
-  }
+// nextBtnTwelveth.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_kids_1");
+//   let radio_2  = document.getElementById("radio_kids_2");
+//   let radio_3  = document.getElementById("radio_kids_3");
+//   let radio_4  = document.getElementById("radio_kids_4");
+//   if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-300%";
+//   }
   
-});
+// });
 
-nextBtnThirteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("LoanSelect")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-325%";
-  }
+// nextBtnThirteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("LoanSelect")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-325%";
+//   }
   
-});
+// });
 
-nextBtnFourteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("amount_borrowed_field")
-  if(number.value<=0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-350%";
-  }
-});
+// nextBtnFourteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("amount_borrowed_field")
+//   if(number.value<=0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-350%";
+//   }
+// });
 
-nextBtnFifteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_loan_last_1");
-  let radio_2  = document.getElementById("radio_loan_last_2");
-  let radio_3  = document.getElementById("radio_loan_last_3");
-  let radio_4  = document.getElementById("radio_loan_last_4");
-  let radio_5  = document.getElementById("radio_loan_last_5");
-  let radio_6  = document.getElementById("radio_loan_last_6");
-  if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-375%";
-  }
-});
+// nextBtnFifteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_loan_last_1");
+//   let radio_2  = document.getElementById("radio_loan_last_2");
+//   let radio_3  = document.getElementById("radio_loan_last_3");
+//   let radio_4  = document.getElementById("radio_loan_last_4");
+//   let radio_5  = document.getElementById("radio_loan_last_5");
+//   let radio_6  = document.getElementById("radio_loan_last_6");
+//   if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-375%";
+//   }
+// });
 
-nextBtnSixteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("salary_after_tax")
-  if(number.value<=0 || number.value==""){
-      alert("Enter Valid Salary")
-  }
-  else{
-    slidePage.style.marginLeft = "-400%";
-  }
+// nextBtnSixteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("salary_after_tax")
+//   if(number.value<=0 || number.value==""){
+//       alert("Enter Valid Salary")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-400%";
+//   }
   
-});
+// });
 
-nextBtnSeventeen.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_additional_salary_1");
-  let radio_2  = document.getElementById("radio_additional_salary_2");
-  if(radio_1.checked== false && radio_2.checked==false){
-    alert("Select One Option")
-  }
-  else{
-    if(radio_1.checked==true){
-      additional_sal_yes = true
-      additional_sal_no = false
-      slidePage.style.marginLeft = "-425%";
-    }
-    else if(radio_2.checked==true){
-      additional_sal_yes = false
-      additional_sal_no = true
-      slidePage.style.marginLeft = "-450%";
-    }
+// nextBtnSeventeen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_additional_salary_1");
+//   let radio_2  = document.getElementById("radio_additional_salary_2");
+//   if(radio_1.checked== false && radio_2.checked==false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     if(radio_1.checked==true){
+//       additional_sal_yes = true
+//       additional_sal_no = false
+//       slidePage.style.marginLeft = "-425%";
+//     }
+//     else if(radio_2.checked==true){
+//       additional_sal_yes = false
+//       additional_sal_no = true
+//       slidePage.style.marginLeft = "-450%";
+//     }
     
-  }
+//   }
   
-});
+// });
 
-nextBtnSeventeen_1.addEventListener("click",function(event){
-  event.preventDefault()
-  let number = document.getElementById("additional_salary")
-  if(number.value="" || number.value<=0){
-    alert("Enter Valid Salary")
-  }
-  else{
-    slidePage.style.marginLeft = "-450%"
-  }
+// nextBtnSeventeen_1.addEventListener("click",function(event){
+//   event.preventDefault()
+//   let number = document.getElementById("additional_salary")
+//   if(number.value="" || number.value<=0){
+//     alert("Enter Valid Salary")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-450%"
+//   }
 
-})
+// })
 
-nextBtnEighteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("mortgage_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-475%";
-  }
+// nextBtnEighteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("mortgage_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-475%";
+//   }
   
  
-});
+// });
 
-nextBtnNineteen.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("food_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-500%";
-  }
+// nextBtnNineteen.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("food_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-500%";
+//   }
   
-});
+// });
 
-nextBtnTwenty.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("transportation_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-525%";
-  }
-});
+// nextBtnTwenty.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("transportation_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-525%";
+//   }
+// });
 
-nextBtnTwentyOne.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("light_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-550%";
-  }
+// nextBtnTwentyOne.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("light_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-550%";
+//   }
   
-});
+// });
 
-nextBtnTwentyTwo.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("water_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-575%";
-  }
-});
+// nextBtnTwentyTwo.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("water_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-575%";
+//   }
+// });
 
-nextBtnTwentyThree.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("grooming_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-600%";
-  }
-});
+// nextBtnTwentyThree.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("grooming_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-600%";
+//   }
+// });
 
-nextBtnTwentyFour.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("entertainment_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-625%";
-  }
-});
+// nextBtnTwentyFour.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("entertainment_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-625%";
+//   }
+// });
 
-nextBtnTwentyFive.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_existing_loan_1");
-  let radio_2  = document.getElementById("radio_existing_loan_2");
-  if(radio_1.checked==false && radio_2.checked==false){
-    alert("Select One Option")
-  }
-  else{
-      if(radio_1.checked==true){
-        loan_page_yes = true
-        loan_page_no = false
-        slidePage.style.marginLeft = "-650%"
-      }
-      else if(radio_2.checked==true){
-        loan_page_yes = false
-        loan_page_no = true
-        slidePage.style.marginLeft = "-675%"
-      }
-  }
+// nextBtnTwentyFive.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_existing_loan_1");
+//   let radio_2  = document.getElementById("radio_existing_loan_2");
+//   if(radio_1.checked==false && radio_2.checked==false){
+//     alert("Select One Option")
+//   }
+//   else{
+//       if(radio_1.checked==true){
+//         loan_page_yes = true
+//         loan_page_no = false
+//         slidePage.style.marginLeft = "-650%"
+//       }
+//       else if(radio_2.checked==true){
+//         loan_page_yes = false
+//         loan_page_no = true
+//         slidePage.style.marginLeft = "-675%"
+//       }
+//   }
   
-});
+// });
 
-nextBtnTwentyFive_1.addEventListener("click",function(event){
-  event.preventDefault();
-  let loan_check = document.getElementById("loan_amount_exists")
-  if(loan_check.value=="" || loan_check.value<=0){
-    alert("Enter Valid Amount")
-  }
-  else{
+// nextBtnTwentyFive_1.addEventListener("click",function(event){
+//   event.preventDefault();
+//   let loan_check = document.getElementById("loan_amount_exists")
+//   if(loan_check.value=="" || loan_check.value<=0){
+//     alert("Enter Valid Amount")
+//   }
+//   else{
     
-    slidePage.style.marginLeft = "-675%";
-  }
+//     slidePage.style.marginLeft = "-675%";
+//   }
   
-})
+// })
 
 
-nextBtnTwentySix.addEventListener("click", function(event){
-  event.preventDefault();
-  let number = document.getElementById("kids_amount")
-  if(number.value<0 || number.value==""){
-      alert("Enter Valid Amount")
-  }
-  else{
-    slidePage.style.marginLeft = "-700%";
-  }
+// nextBtnTwentySix.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number = document.getElementById("kids_amount")
+//   if(number.value<0 || number.value==""){
+//       alert("Enter Valid Amount")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-700%";
+//   }
 
   
-});
+// });
 
-nextBtnTwentySeven.addEventListener("click", function(event){
-  event.preventDefault();
-  let number_1 = document.getElementById("phone_mobile")
-  let number_2 = document.getElementById("phone_work")
-  if(number_1.value==""){
+// nextBtnTwentySeven.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let number_1 = document.getElementById("phone_mobile")
+//   let number_2 = document.getElementById("phone_work")
+//   if(number_1.value==""){
 
-      alert("Enter valid mobile phone number")
-  }
-  else if(number_2.value==""){
+//       alert("Enter valid mobile phone number")
+//   }
+//   else if(number_2.value==""){
 
-      alert("Enter valid work phone number")
-  }
-  else{
-    slidePage.style.marginLeft = "-725%";
-  }
+//       alert("Enter valid work phone number")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-725%";
+//   }
   
-});
+// });
 
-nextBtnTwentyEight.addEventListener("click", function(event){
-  event.preventDefault();
-  let email  = document.getElementById("email")
-  let re = /\S+@\S+\.\S+/
-  if(email.value==""){
-    alert("Enter Email")
-  }
-  else if(!(re.test(email.value)))
-  {
-    alert("Enter Valid Email")
-  }
-  else{
-    slidePage.style.marginLeft = "-750%";
-  }
+// nextBtnTwentyEight.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let email  = document.getElementById("email")
+//   let re = /\S+@\S+\.\S+/
+//   if(email.value==""){
+//     alert("Enter Email")
+//   }
+//   else if(!(re.test(email.value)))
+//   {
+//     alert("Enter Valid Email")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-750%";
+//   }
     
-});
+// });
 
-nextBtnTwentyNine.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_apps_1");
-  let radio_2  = document.getElementById("radio_apps_2");
-  let radio_3  = document.getElementById("radio_apps_3");
-  let radio_4  = document.getElementById("radio_apps_4");
-  let radio_5  = document.getElementById("radio_apps_5");
-  let radio_6  = document.getElementById("radio_apps_6");
-  if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-775%";
-  }
-});
+// nextBtnTwentyNine.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_apps_1");
+//   let radio_2  = document.getElementById("radio_apps_2");
+//   let radio_3  = document.getElementById("radio_apps_3");
+//   let radio_4  = document.getElementById("radio_apps_4");
+//   let radio_5  = document.getElementById("radio_apps_5");
+//   let radio_6  = document.getElementById("radio_apps_6");
+//   if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-775%";
+//   }
+// });
 
-nextBtnThirty.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("family_select")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-800%";
-  }
-});
+// nextBtnThirty.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("family_select")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-800%";
+//   }
+// });
 
-nextBtnThirtyOne.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("save_contacts")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-825%";
-  }
-});
+// nextBtnThirtyOne.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("save_contacts")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-825%";
+//   }
+// });
 
-nextBtnThirtyTwo.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("pre_paid_post")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-850%";
-  }
-});
+// nextBtnThirtyTwo.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("pre_paid_post")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-850%";
+//   }
+// });
 
-nextBtnThirtyThree.addEventListener("click", function(event){
-  event.preventDefault();
-  let select_tag = document.getElementById("top_up")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-    slidePage.style.marginLeft = "-875%";
-  }
-});
+// nextBtnThirtyThree.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("top_up")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-875%";
+//   }
+// });
 
 
-nextBtnThirtyFour.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "-900%";
+// nextBtnThirtyFour.addEventListener("click", function(event){
+//   event.preventDefault();
+//   slidePage.style.marginLeft = "-900%";
   
-});
+// });
 
-submitBtn.addEventListener("click", function(){
-  event.preventDefault();
-  let select_tag = document.getElementById("find_us")
-  if(select_tag.value==""){
-    alert("Select One Option")
-  }
-  else{
-   let form = document.getElementById("user_form") 
-  //  form.submit()
+// submitBtn.addEventListener("click", function(){
+//   event.preventDefault();
+//   let select_tag = document.getElementById("find_us")
+//   if(select_tag.value==""){
+//     alert("Select One Option")
+//   }
+//   else{
+//    let form = document.getElementById("user_form") 
+//   //  form.submit()
 
-  //  setTimeout(function(){
-  //   alert("Your Form Successfully Signed up");
-  //   location.reload();
-  // },800);
-  }
-});
+//   //  setTimeout(function(){
+//   //   alert("Your Form Successfully Signed up");
+//   //   location.reload();
+//   // },800);
+//   }
+// });
 
 prevBtnSec.addEventListener("click", function(event){
   event.preventDefault();
