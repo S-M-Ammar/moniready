@@ -1215,46 +1215,46 @@ const progressCheck = document.querySelectorAll(".step .check");*/
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
-nextBtnFirst.addEventListener("click", function(event){
-  event.preventDefault();
-  let first_name = document.getElementById("firstName");
-  let last_name = document.getElementById("lastName");
-  if(first_name.value==""){
-    alert("Enter First Name");
-  }
-  else if(last_name.value==""){
-    alert("Enter last Name");
-  }
-  else{
-    slidePage.style.marginLeft = "-25%";
-  }
+// nextBtnFirst.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let first_name = document.getElementById("firstName");
+//   let last_name = document.getElementById("lastName");
+//   if(first_name.value==""){
+//     alert("Enter First Name");
+//   }
+//   else if(last_name.value==""){
+//     alert("Enter last Name");
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-25%";
+//   }
 
-});
-nextBtnSec.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radioMale");
-  let radio_2  = document.getElementById("radioFemale");
-  let radio_3  = document.getElementById("radioOthers");
-  if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false){
-    alert("Select Gender")
-  }
-  else{
-    slidePage.style.marginLeft = "-50%";
-  }
+// });
+// nextBtnSec.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radioMale");
+//   let radio_2  = document.getElementById("radioFemale");
+//   let radio_3  = document.getElementById("radioOthers");
+//   if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false){
+//     alert("Select Gender")
+//   }
+//   else{
+//     slidePage.style.marginLeft = "-50%";
+//   }
   
-});
-nextBtnThird.addEventListener("click", function(event){
-  event.preventDefault();
-  let radio_1  = document.getElementById("radio_N_Jamaican");
-  let radio_2  = document.getElementById("radio_N_Others");
-  if(radio_1.checked==false && radio_2.checked == false){
-    alert("Select Nationality")
-  }
-  else{
-      slidePage.style.marginLeft = "-75%";
-  }
+// });
+// nextBtnThird.addEventListener("click", function(event){
+//   event.preventDefault();
+//   let radio_1  = document.getElementById("radio_N_Jamaican");
+//   let radio_2  = document.getElementById("radio_N_Others");
+//   if(radio_1.checked==false && radio_2.checked == false){
+//     alert("Select Nationality")
+//   }
+//   else{
+//       slidePage.style.marginLeft = "-75%";
+//   }
 
-});
+// });
 
 nextBtnFourth.addEventListener("click", function(event){
   event.preventDefault();
@@ -1705,7 +1705,7 @@ submitBtn.addEventListener("click", function(){
   else{
    let form = document.getElementById("user_form") 
   //  form.submit()
-  
+
   //  setTimeout(function(){
   //   alert("Your Form Successfully Signed up");
   //   location.reload();
