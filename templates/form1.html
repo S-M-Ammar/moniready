@@ -286,8 +286,10 @@ form .page .btns button.next{
 </div>
 </div>
 <div class="form-outer">
-        <form id="user_form" method="POST" action="end.html">
+        <!-- <form id="user_form" method="POST" action="end.html"> -->
+          <form id="QForm1">
           <div class="page slide-page">
+            
             <div class="title">
 Basic Info:</div>
 <div class="field">
@@ -301,10 +303,11 @@ Last Name</div>
 <input type="text" name="lastName" id="lastName" >
             </div>
 <div class="field">
-              <button class="firstNext next" type="submit">Next</button>
+              <input class="firstNext next" type="submit"></button>
               
         </div>
   </div>
+</form>
 <div class="page">
             <div class="title">
 Gender</div>
@@ -325,7 +328,7 @@ Gender</div>
  -->
 <div class="field btns">
               <button class="prev-1 prev">Previous</button>
-              <button class="next-1 next"type="submit">Next</button>
+              <!-- <button class="next-1 next"type="submit">Next</button> -->
             </div>
 </div>
 <div class="page">
@@ -351,7 +354,7 @@ Gender</div>
             </div> -->
 <div class="field btns">
               <button class="prev-2 prev">Previous</button>
-              <button class="next-2 next" type="submit">Next</button>
+              <!-- <button class="next-2 next" type="submit">Next</button> -->
             </div>
 </div>
 <div class="page">
@@ -366,7 +369,7 @@ Enter your age</div>
             <br>
 <div class="field btns">
               <button class="prev-3 prev" >Previous</button>
-              <button class="next-3 next" type="submit">Next</button>
+              <!-- <button class="next-3 next" type="submit">Next</button> -->
             </div>
 </div>
 
@@ -398,7 +401,7 @@ Marital Status</div>
             </div>
 <div class="field btns">
               <button class="prev-4 prev">Previous</button>
-              <button class="next-4 next" type="submit">Next</button>
+              <!-- <button class="next-4 next" type="submit">Next</button> -->
             </div>
 </div>
 
@@ -420,7 +423,7 @@ Employment Status</div>
             </div>
             <div class="field btns">
               <button class="prev-5 prev">Previous</button>
-              <button class="next-5 next">Next</button>
+              <!-- <button class="next-5 next">Next</button> -->
             </div>
 
 </div>
@@ -455,8 +458,8 @@ What is your occupation</div>
               </select>
             </div>
             <div class="field btns">
-              <button class="prev-6 prev">Previous</button>
-              <button class="next-6 next">Next</button>
+              <!-- <button class="prev-6 prev">Previous</button> -->
+              <!-- <button class="next-6 next">Next</button> -->
             </div>
 
 </div>
@@ -1020,7 +1023,7 @@ Do you have a moniready referrer code?</div>
 </div>
 
 
-</form>
+<!-- </form> -->
 </div>
 </div>
 <!-- Somehow I got an error, so I comment the script tag, just uncomment to use -->
@@ -1105,7 +1108,7 @@ Do you have a moniready referrer code?</div>
 // })
 
 
-const userForm = document.getElementById("user_form")
+const userForm = document.getElementById("QForm1")
 userForm.addEventListener("submit",function(e){
   e.preventDefault()
   alert("got it")
