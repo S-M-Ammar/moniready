@@ -368,7 +368,7 @@ form .page .btns button.next{
 //     }
 //   })
 // })
-
+// <input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next">
 let question_counter = 1;
 const outerForm = document.getElementById("outerForm")
 var userForm_1;
@@ -398,25 +398,17 @@ function Q1(){
   else{
     user_info_dict['firstName'] = first_name.value
     user_info_dict['lastName'] = last_name.value
-    if(question_counter==1){
-      Q2()
-    }
+    Q2()
   }
 })
 
 }
 
 function Q2(){
- outerForm.innerHTML=""
- outerForm.innerHTML = '<form id="userForm_2" action="end.html" method="POST"><div class="page"><div class="title">Gender</div><div class="field"><input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale"><label for="male">Male</label>  <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"><label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers"><label for="others">Others</label></div><div class="field btns"><input class="prev-1 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-1 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
- userForm_2 = document.getElementById("userForm_2")
- let variables = document.createElement("input")
- variables.type = "hidden"
- variables.value = JSON.stringify(user_info_dict)
- variables.name = "params"
- userForm_2.appendChild(variables)
-//  console.log(JSON.stringify(user_info_dict))
  question_counter +=1
+ outerForm.innerHTML=""
+ outerForm.innerHTML = '<form id="userForm_2"><div class="page"><div class="title">Gender</div><div class="field"><input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale"><label for="male">Male</label>  <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"><label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers"><label for="others">Others</label></div><div class="field btns"><input class="prev-1 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-1 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+ userForm_2 = document.getElementById("userForm_2")
  userForm_2.addEventListener("submit",function(e){
     e.preventDefault()
     if(check==true){
@@ -430,29 +422,69 @@ function Q2(){
     }
     else{
       user_info_dict['gender'] = "Male"
-      check = true
-      userForm_2.submit()
+      Q3()
     }
  })
 }
 
 function Q3(){
+  console.log("inside q3")
   question_counter +=1
-
-  // outerForm.innerHTML=""
-  // let form3 = document.getElementById("userForm_3")
-  // // form3['information'] = user_info_dict
-  // form3.submit()
-
-  // var xhr = new XMLHttpRequest();
-  // var url = "http://127.0.0.1:5000/end.html";
-  // xhr.open("POST", url, true);
-  // xhr.setRequestHeader("Content-Type", "application/json"); 
-  // var data = JSON.stringify(user_info_dict);
-  // xhr.send(data);
-
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_3"><div class="page"><div class="title">Nationality</div><div class="field"><input type="radio" name="Nationality" id="radio_N_Jamaican" style="height: 30px;"><label for="jamaican">Jamaican</label><input type="radio" name="Nationality" id="radio_N_Others" style="height: 30px;"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_3 = document.getElementById("userForm_3")
+  userForm_3.addEventListener("submit",function(e){
+  e.preventDefault()
+  let radio_1  = document.getElementById("radio_N_Jamaican");
+  let radio_2  = document.getElementById("radio_N_Others");
+  if(radio_1.checked==false && radio_2.checked == false){
+    alert("Select Nationality")
+  }
+  else{
+      Q4()
+  }
+  })
 }
 
+function Q4(){
+  question_counter +=1
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_4"><div class="page"><div class="title">How old are you?</div><br><div class="field"><div class="label">Enter your age</div><input type="number" name="user_age" placeholder="e.g. 32" value="" id="age_field"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_4 = document.getElementById("userForm_4")
+  userForm_4.addEventListener("submit",function(e){
+  e.preventDefault()
+  let number = document.getElementById("age_field")
+  if(number.value<=0 || number.value=="" || number.value<18 || number.value>=100){
+      alert("Age must be greater or equal to 18 and less than 100")
+  }
+  else{
+    Q5()
+  }
+})
+}
+
+function Q5(){
+  question_counter +=1
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_5"><div class="page"><div class="title">Marital Status</div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="married" id="radio_married"><label for="married">Married</label><input type="radio" name="Marital Status" style="height: 30px;" value="single" id="radio_single"><label for="single">Single</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Divorced/Separated" id="radio_divorced"><label for="divorce">Divorced/Seperated</label><input type="radio" name="Marital Status" style="height: 30px;" value="Widowed" id="radio_widowed"><label for="widowed">Widowed</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Living Together" id="radio_living_together"><label for="tohether">Living Together/Common</label><input type="radio" name="Marital Status" style="height: 30px;" value="Others" id="radio_ms_others"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_5 = document.getElementById("userForm_5")
+  userForm_5.addEventListener("submit",function(e){
+  e.preventDefault()
+  let radio_1  = document.getElementById("radio_married");
+  let radio_2  = document.getElementById("radio_single");
+  let radio_3  = document.getElementById("radio_divorced");
+  let radio_4  = document.getElementById("radio_widowed");
+  let radio_5  = document.getElementById("radio_ms_others");
+  let radio_6  = document.getElementById("radio_living_together");
+  if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+    alert("Select One Option")
+  }
+  else{
+    console.log("form submitted")
+    alert('form submitted')
+  }
+})
+}
 
 function P1(){
   outerForm.innerHTML=""
