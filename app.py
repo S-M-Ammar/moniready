@@ -240,7 +240,7 @@ def end_page():
       social_apps = social_apps + user_dict['social_apps_TikTok']+","
       del user_dict['social_apps_TikTok']
     if('social_apps_Others' in user_dict.keys()):
-      social_apps = social_apps + user_dict['social_apps_Snapchat']+","
+      social_apps = social_apps + user_dict['social_apps_Others']+","
       del user_dict['social_apps_Others']
 
     user_dict['submission_date'] = str(date.today())
