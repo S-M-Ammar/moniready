@@ -381,6 +381,26 @@ var userForm_7;
 var userForm_8;
 var userForm_9;
 var userForm_10;
+var userForm_11;
+var userForm_12;
+var userForm_13;
+var userForm_14;
+var userForm_15;
+var userForm_16;
+var userForm_17;
+var userForm_18;
+var userForm_19;
+var userForm_20;
+var userForm_21;
+var userForm_22;
+var userForm_23;
+var userForm_24;
+var userForm_25;
+var userForm_26;
+var userForm_27;
+var userForm_28;
+var userForm_29;
+var userForm_30;
 
 let check = false;
 
@@ -728,12 +748,598 @@ function Q10(){
   else{
     user_info_dict['address'] = address.value
     user_info_dict['parish'] = parish.value
-    console.log(user_info_dict)
-    console.log("form submitted")
-    alert("form submitted")
+    Q11()
   }
 })
 }
+
+
+function Q11(){
+  question_counter = 11
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_11"><div class="page"><div class="title">How long you have been living at your present address?</div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_1" value="0 to 1year"><label for="less1">0 to 1year</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_2" value="2 to 9Years"><label for="2-9">2 to 9Years</label></div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_3" value="10 to 24Years"><label for="10-24">10 to 24Years</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_4" value="25+years"><label for="25+">25+years</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_11 = document.getElementById("userForm_11")
+  if("living_with_address" in user_info_dict){
+    let radio_1  = document.getElementById("radio_address_1");
+    let radio_2  = document.getElementById("radio_address_2");
+    let radio_3  = document.getElementById("radio_address_3");
+    let radio_4  = document.getElementById("radio_address_4");
+    if(user_info_dict['living_with_address'] == "0 to 1year"){
+      radio_1.checked = true
+    }
+    else if(user_info_dict['living_with_address'] == "2 to 9Years"){
+      radio_2.checked = true
+    }
+    else if(user_info_dict['living_with_address'] == "10 to 24Years"){
+      radio_3.checked = true
+    }
+    else if(user_info_dict['living_with_address'] == "25+years"){
+      radio_4.checked = true
+    }
+  }
+  userForm_11.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_address_1");
+    let radio_2  = document.getElementById("radio_address_2");
+    let radio_3  = document.getElementById("radio_address_3");
+    let radio_4  = document.getElementById("radio_address_4");
+    if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['living_with_address'] = "0 to 1year"
+      }
+      else if(radio_2.checked==true){
+        user_info_dict['living_with_address'] = "2 to 9Years"
+      }
+      else if(radio_3.checked==true){
+        user_info_dict['living_with_address'] = "10 to 24Years"
+      }
+      else if(radio_4.checked==true){
+        user_info_dict['living_with_address'] = "25+years"
+      }
+      Q12()
+    }
+  })
+}
+
+function Q12(){
+  question_counter = 12
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_12"><div class="page"><div class="title">How many kids do you have?</div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_1" value="0"><label for="0">0</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_2" value="1"><label for="1">1</label></div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_3" value="2"><label for="2">2</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_4" value="Above 2"><label for="more">Above 2</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_12 = document.getElementById("userForm_12")
+  if("kids" in user_info_dict){
+    if(user_info_dict['kids'] == "0"){
+      radio_1.checked = true
+    }
+    else if(user_info_dict['kids'] == "1"){
+      radio_2.checked = true
+    }
+    else if(user_info_dict['kids'] == "2"){
+      radio_3.checked = true
+    }
+    else if(user_info_dict['kids'] == "Above 2"){
+      radio_4.checked = true
+    }
+  }
+  userForm_12.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_kids_1");
+    let radio_2  = document.getElementById("radio_kids_2");
+    let radio_3  = document.getElementById("radio_kids_3");
+    let radio_4  = document.getElementById("radio_kids_4");
+    if(radio_1.checked==false && radio_2.checked==false && radio_3.checked==false && radio_4.checked==false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['kids'] = "0"
+      }
+      else if(radio_2.checked==true){
+        user_info_dict['kids'] = "1"
+      }
+      else if(radio_3.checked==true){
+        user_info_dict['kids'] = "2"
+      }
+      else if(radio_4.checked==true){
+        user_info_dict['kids'] = "Above 2"
+      }
+      Q13()
+    }
+  })
+}
+
+function Q13(){
+  question_counter = 13
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_13"><div class="page"><div class="title">What is the main purpose of the loan?</div><div class="field"><select id="LoanSelect" name="LoanPurpose"><option></option><option>Personal</option><option>Travel</option><option>Clothing</option><option>Air Conditioning or Heating Units</option><option>Bedding</option><option>Business Equipments</option><option>Dining</option><option>Refrigerator</option><option>Laundry-Washer,Dryer</option><option>Outdoor:Mower,Water Tank,Generator</option><option>Stoves</option><option>Upholstered item-Settees,Liv Room Suit</option><option>Video-Tv,Dvd,Home Theater</option><option>Audio-Hifi,Component Sets,Radios</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_13 = document.getElementById("userForm_13")
+  if("loan_purpose" in  user_info_dict){
+    let select_tag = document.getElementById("LoanSelect")
+    select_tag.value = user_info_dict['loan_purpose'] 
+  }
+  userForm_13.addEventListener("submit",function(e){
+    e.preventDefault()
+    let select_tag = document.getElementById("LoanSelect")
+    if(select_tag.value==""){
+       alert("Select One Option")
+    }
+    else{
+      user_info_dict['loan_purpose'] = select_tag.value
+      Q14()
+    }
+  })
+}
+
+function Q14(){
+  question_counter = 14
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_14"><div class="page"><div class="title">How much money do you want to borrow?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="amount_borrowed_field" name="moneyBorrow"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_14 = document.getElementById("userForm_14")
+  if("amount_borrowed" in user_info_dict){
+    let number = document.getElementById("amount_borrowed_field")
+    number.value = user_info_dict['amount_borrowed'] 
+  }
+  userForm_14.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("amount_borrowed_field")
+    if(number.value<=0 || number.value==""){
+        alert("Enter Valid Amount")
+    }
+    else{
+      user_info_dict['amount_borrowed'] = number.value
+      Q15()
+    }
+  })
+}
+
+function Q15(){
+  question_counter = 15
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_15"><div class="page"><div class="title">How long do you want the loan to last</div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_1"><label for="1">1Month</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_2"><label for="2">2Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_3"><label for="3">3Months</label></div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_4"><label for="4">4Months</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_5"><label for="5">5Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_6"><label for="6">6Months</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_15 = document.getElementById("userForm_15")
+  if("loan_last" in user_info_dict){
+    let radio_1  = document.getElementById("radio_loan_last_1");
+    let radio_2  = document.getElementById("radio_loan_last_2");
+    let radio_3  = document.getElementById("radio_loan_last_3");
+    let radio_4  = document.getElementById("radio_loan_last_4");
+    let radio_5  = document.getElementById("radio_loan_last_5");
+    let radio_6  = document.getElementById("radio_loan_last_6");
+    if(user_info_dict['loan_last'] == "1Month"){
+      radio_1.checked = true
+    }
+    else if(user_info_dict['loan_last'] == "2Months"){
+      radio_2.checked = true
+    }
+    else if(user_info_dict['loan_last'] == "3Months"){
+      radio_3.checked = true
+    }
+    else if(user_info_dict['loan_last'] == "4Months"){
+      radio_4.checked = true
+    }
+    else if(user_info_dict['loan_last'] == "5Months"){
+      radio_5.checked = true
+    }
+    else if(user_info_dict['loan_last'] == "6Months"){
+      radio_6.checked = true
+    }
+  }
+  userForm_15.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_loan_last_1");
+    let radio_2  = document.getElementById("radio_loan_last_2");
+    let radio_3  = document.getElementById("radio_loan_last_3");
+    let radio_4  = document.getElementById("radio_loan_last_4");
+    let radio_5  = document.getElementById("radio_loan_last_5");
+    let radio_6  = document.getElementById("radio_loan_last_6");
+    if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['loan_last'] = "1Month"
+      }
+      else if(radio_2.checked==true){
+        user_info_dict['loan_last'] = "2Months"
+      }
+      else if(radio_3.checked==true){
+        user_info_dict['loan_last'] = "3Months"
+      }
+      else if(radio_4.checked==true){
+        user_info_dict['loan_last'] = "4Months"
+      }
+      else if(radio_5.checked==true){
+        user_info_dict['loan_last'] = "5Months"
+      }
+      else if(radio_6.checked==true){
+        user_info_dict['loan_last'] = "6Months"
+      }
+      Q16()
+    }
+  })
+}
+
+function Q16(){
+  question_counter = 16
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_16"><div class="page"><div class="title">What is your take home salary after tax each month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="salary_after_tax" name="home_salary"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_16 = document.getElementById("userForm_16")
+  if("salary" in user_info_dict){
+    let number = document.getElementById("salary_after_tax")
+    number.value = user_info_dict['salary']
+  }
+  userForm_16.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("salary_after_tax")
+    if(number.value<=0 || number.value==""){
+       alert("Enter Valid Salary")
+    }
+    else{
+     user_info_dict['salary'] = number.value
+     Q17()
+    }
+  })
+}
+
+function Q17(){
+  question_counter = 17
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_17"><div class="page"><div class="title">Do you have additional source of income?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_additional_salary_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_additional_salary_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_17 = document.getElementById("userForm_17")
+  if("addtional_salary_input" in user_info_dict){
+    let radio_1  = document.getElementById("radio_additional_salary_1");
+    let radio_2  = document.getElementById("radio_additional_salary_2");
+    if(user_info_dict['addtional_salary_input'] == "Yes"){
+      radio_1.checked = true
+    }
+    else if(user_info_dict['addtional_salary_input'] == "No"){
+      radio_2.checked =true
+    }
+  }
+  userForm_17.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_additional_salary_1");
+    let radio_2  = document.getElementById("radio_additional_salary_2");
+    if(radio_1.checked== false && radio_2.checked==false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['addtional_salary_input'] = "Yes"
+      }
+      else if(radio_2.checked==true){
+        user_info_dict['addtional_salary_input'] = "NO"
+      }
+
+      if(user_info_dict['addtional_salary_input']=="Yes"){
+        Q18()
+      }
+      else{
+        Q19()
+      }
+    }
+  })
+}
+
+function Q18(){
+  question_counter = 18
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_18"><div class="page"><div class="title">Enter Additional Income Amount</div><br><div class="field"><input type="number" name="income_additional" style="height: 30px;" id="additional_salary" value=""></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_18 = document.getElementById("userForm_18")
+  if("additional_salary" in user_info_dict){
+    let number = document.getElementById("additional_salary")
+    number.value = user_info_dict['additional_salary']
+  }
+  userForm_18.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("additional_salary")
+    if(number.value=="" || number.value<=0){
+      alert("Enter Valid Salary")
+    }
+    else{
+      user_info_dict['additional_salary'] = number.value
+      Q19()
+    }
+  })
+}
+
+function Q19(){
+  question_counter = 19
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_19"><div class="page"><div class="title">How much do you spend on rent/mortgage per month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="mortgage_amount" name="mortgage_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_19 = document.getElementById("userForm_19")
+  if("mortgage_expense" in user_info_dict){
+    let number = document.getElementById("mortgage_amount")
+    number.value =  user_info_dict['mortgage_expense'] 
+  }
+  userForm_19.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("mortgage_amount")
+    if(number.value<0 || number.value==""){
+        alert("Enter Valid Amount")
+    }
+    else{
+      user_info_dict['mortgage_expense'] = number.value
+      Q20()
+    }
+  })
+}
+
+function Q20(){
+  question_counter = 20
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_20"><div class="page"><div class="title">How much do you spend on food every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="food_amount" name="food_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_20 = document.getElementById("userForm_20")
+  if("food_expense" in user_info_dict){
+    let number = document.getElementById("food_amount")
+    number.value = user_info_dict['food_expense']
+  }
+  userForm_20.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("food_amount")
+    if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+    }
+    else{
+      user_info_dict['food_expense'] = number.value
+      Q21()
+    }
+  })
+}
+
+function Q21(){
+  question_counter = 21
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_21"><div class="page"><div class="title">How much do you spend on transportation every month?</div><br><div class="field"><input type="number" placeholder="e.g. 25000" id="transportation_amount" name="transport_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_21 = document.getElementById("userForm_21")
+  if("transportation_expense" in user_info_dict){
+    let number = document.getElementById("transportation_amount")
+    number.value =  user_info_dict['transportation_expense']
+  }
+  userForm_21.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("transportation_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['transportation_expense'] = number.value
+    Q22()
+  }
+  })
+}
+
+function Q22(){
+  question_counter = 22
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_22"><div class="page"><div class="title">How much do you spend on light per month?</div><br><div class="field"><input type="number" placeholder="e.g. 5500" id="light_amount" name="light_expenditure"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_22 = document.getElementById("userForm_22")
+  if("light_expense" in user_info_dict){
+    let number = document.getElementById("light_amount")
+    number.value = user_info_dict['light_expense']
+  }
+  userForm_22.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("light_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['light_expense'] = number.value
+    Q23()
+  }
+  })
+}
+
+function Q23(){
+  question_counter = 23
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_23"><div class="page"><div class="title">How much do you spend on water per month?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="water_amount" name="water_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_23 = document.getElementById("userForm_23")
+  if("water_expense" in user_info_dict){
+    let number = document.getElementById("water_amount")
+    number.value = user_info_dict['water_expense']
+  }
+  userForm_23.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("water_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['water_expense'] = number.value
+    Q24()
+  }
+  })
+}
+
+function Q24(){
+  question_counter = 24
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_24"><div class="page"><div class="title">How much do you spend on grooming every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="grooming_amount" name="grooming_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_24 = document.getElementById("userForm_24")
+  if("grooming_expense" in user_info_dict){
+    let number = document.getElementById("grooming_amount")
+    number.value = user_info_dict['grooming_expense']
+  }
+  userForm_24.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("grooming_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['grooming_expense'] = number.value
+    Q25()
+  }
+  })
+}
+
+function Q25(){
+  question_counter = 25
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_25"><div class="page"><div class="title">How much do you spend on entertainment every month?</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="entertainment_amount" name="entertainment_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_25 = document.getElementById("userForm_25")
+  if('entertainment_expense' in user_info_dict){
+    let number = document.getElementById("entertainment_amount")
+    number.value = user_info_dict['entertainment_expense']
+  }
+  userForm_25.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("entertainment_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['entertainment_expense'] = number.value
+    Q26()
+  }
+  })
+}
+
+function Q26(){
+  question_counter = 26
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_26"><div class="page"><div class="title">Do you have any other existing loans?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_existing_loan_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_existing_loan_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_26 = document.getElementById("userForm_26")
+  if('exist_loan_input' in user_info_dict){
+    let radio_1  = document.getElementById("radio_existing_loan_1");
+    let radio_2  = document.getElementById("radio_existing_loan_2");
+    if(user_info_dict['exist_loan_input'] == "Yes"){
+      radio_1.checked =true
+    }
+    else if(user_info_dict['exist_loan_input'] == "No"){
+      radio_2.checked = true
+    }
+  }
+  userForm_26.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_existing_loan_1");
+    let radio_2  = document.getElementById("radio_existing_loan_2");
+    if(radio_1.checked==false && radio_2.checked==false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['exist_loan_input'] = "Yes"
+      }
+      else if(radio_2.checked==true){
+        user_info_dict['exist_loan_input'] = "No"
+      }
+
+      if(user_info_dict['exist_loan_input']=="Yes"){
+        Q27()
+      }
+      else{
+        Q28()
+      }
+    }
+  })
+}
+
+function Q27(){
+  question_counter = 27
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_27"><div class="page"><div class="title">Enter amount of loan </div><br><div class="field"><input type="number" name="current_loan_payment" id="loan_amount_exists"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_27 = document.getElementById("userForm_27")
+  if('exist_loan_amount' in user_info_dict){
+    let loan_check = document.getElementById("loan_amount_exists")
+    loan_check.value = user_info_dict['exist_loan_amount']
+  }
+  userForm_27.addEventListener("submit",function(e){
+    e.preventDefault()
+    let loan_check = document.getElementById("loan_amount_exists")
+  if(loan_check.value=="" || loan_check.value<=0){
+    alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['exist_loan_amount'] = loan_check.value
+    Q28()
+  }
+  })
+}
+
+function Q28(){
+  question_counter = 28
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_28"><div class="page"><div class="title">How much do you spend on your kid/s every month??</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="kids_amount" name="kids_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_28 = document.getElementById("userForm_28")
+  if("kids_expense" in user_info_dict){
+    let number = document.getElementById("kids_amount")
+    number.value = user_info_dict['kids_expense'] = number.value
+  }
+  userForm_28.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number = document.getElementById("kids_amount")
+  if(number.value<0 || number.value==""){
+      alert("Enter Valid Amount")
+  }
+  else{
+    user_info_dict['kids_expense'] = number.value
+    Q29()
+  }
+  })
+}
+
+function Q29(){
+  question_counter = 29
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_29"><div class="page"><div class="title">What is your phone number?</div><br><div class="field"><input type="text" placeholder="Enter Mobile Phone Number" id="phone_mobile"></div><div class="field"><input type="text" placeholder="Enter Work Phone Number" id="phone_work"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_29 = document.getElementById("userForm_29")
+  if("mobile_number" in user_info_dict){
+    let number_1 = document.getElementById("phone_mobile")
+  let number_2 = document.getElementById("phone_work")
+
+  number_1.value =  user_info_dict['mobile_number']
+  number_2.value = user_info_dict['work_number'] 
+  }
+  userForm_29.addEventListener("submit",function(e){
+    e.preventDefault()
+    let number_1 = document.getElementById("phone_mobile")
+  let number_2 = document.getElementById("phone_work")
+  if(number_1.value==""){
+
+      alert("Enter valid mobile phone number")
+  }
+  else if(number_2.value==""){
+
+      alert("Enter valid work phone number")
+  }
+  else{
+    user_info_dict['mobile_number'] = number_1.value
+    user_info_dict['work_number'] = number_2.value
+    Q30()
+  }
+  })
+}
+
+function Q30(){
+  question_counter = 30
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_30"><div class="page"><div class="title">Email Address</div><br><div class="field"><input type="text" placeholder="ex: entermobile@example.com" id="email" name="user_email"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_31 = document.getElementById("userForm_30")
+  if("email" in user_info_dict){
+    let email  = document.getElementById("email")
+    email.value = user_info_dict['email']
+  }
+  userForm_31.addEventListener("submit",function(e){
+    e.preventDefault()
+    let email  = document.getElementById("email")
+  let re = /\S+@\S+\.\S+/
+  if(email.value==""){
+    alert("Enter Email")
+  }
+  else if(!(re.test(email.value)))
+  {
+    alert("Enter Valid Email")
+  }
+  else{
+    user_info_dict['email'] = email.value
+  }
+  })
+}
+// <input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next">
 
 function funPrevious(){
   console.log(question_counter)
@@ -767,6 +1373,67 @@ function funPrevious(){
   else if(question_counter==11){
     Q10()
   }
+  else if(question_counter==12){
+    Q11()
+  }
+  else if(question_counter==13){
+    Q12()
+  }
+  else if(question_counter==14){
+    Q13()
+  }
+  else if(question_counter==15){
+    Q14()
+  }
+  else if(question_counter==16){
+    Q15()
+  }
+  else if(question_counter==17){
+    Q16()
+  }
+  else if(question_counter==18){
+    Q17()
+  }
+  else if(question_counter==19){
+    Q18()
+  }
+  else if(question_counter==20){
+    Q19()
+  }
+  else if(question_counter==21){
+    Q20()
+  }
+  else if(question_counter==22){
+    Q21()
+  }
+  else if(question_counter==23){
+    Q22()
+  }
+  else if(question_counter==24){
+    Q23()
+  }
+  else if(question_counter==25){
+    Q24()
+  }
+  else if(question_counter==26){
+    Q25()
+  }
+  else if(question_counter==27){
+    Q26()
+  }
+  else if(question_counter==28){
+    Q27()
+  }
+  else if(question_counter==29){
+    Q28()
+  }
+  else if(question_counter==30){
+    Q29()
+  }
+  else if(question_counter==31){
+    Q30()
+  }
+
 }
 
 
