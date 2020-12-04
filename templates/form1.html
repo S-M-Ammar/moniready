@@ -288,87 +288,9 @@ form .page .btns button.next{
 <div class="form-outer" id="outerForm">
 </div>
 </div>
-<!-- Somehow I got an error, so I comment the script tag, just uncomment to use -->
-<!-- <script src="script.js"></script> -->
 
 <script>
 
-// jQuery(function($){
-//   $(document).on("keydown",function(e){
-//     let code = (e.keyCode ? e.keyCode : e.which);
-//     alert(code)
-//     if (code == 9 || code == 13) {
-//       e.preventDefault()
-//       alert('I was tabbed!');
-//       $("#firstName").focus()
-//     } else {
-//       alert('not tabbed');
-//     }
-//   })
-// })
-
-// jQuery(function($){
-//   $("input").on("keydown",function(e){
-    
-//     // let key = e.which || this.value.substr(-1).charCodeAt(0) || e.keyCode
-//     let code = (e.keyCode ? e.keyCode : e.which);
-//     alert(code)
-//     if(code){
-//       e.preventDefault()
-//       $("#firstName").focus()
-//     }
-//     if(code==9){
-//       e.preventDefault()
-//       $("#firstName").focus()
-      
-//     }
-//     if(code==13){
-//       e.preventDefault()
-//       $("#firstName").focus()
-    
-//     }
-//   })
-// })
-
-
-
-// jQuery(function($){
-//   $("input").on("keypress",function(e){
-    
-//     // let key = e.which || this.value.substr(-1).charCodeAt(0) || e.keyCode
-//     let code = (e.keyCode ? e.keyCode : e.which);
-//     alert(code)
-//     if(code){
-//       e.preventDefault()
-//       $("#firstName").focus()
-//     }
-//     if(code==9){
-//       e.preventDefault()
-//       $("#firstName").focus()
-      
-//     }
-//     if(code==13){
-//       e.preventDefault()
-//       $("#firstName").focus()
-    
-//     }
-//   })
-// })
-
-// jQuery(function($){
-//   $(document).on("keyup",function(e){
-//     let code = (e.keyCode ? e.keyCode : e.which);
-//     alert(code)
-//     if (code == 9 || code == 13) {
-//       e.preventDefault()
-//       alert('I was tabbed!');
-//       $("#firstName").focus()
-//     } else {
-//       alert('not tabbed');
-//     }
-//   })
-// })
-// <input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next">
 let question_counter = 1;
 const outerForm = document.getElementById("outerForm")
 var userForm_1;
@@ -401,8 +323,18 @@ var userForm_27;
 var userForm_28;
 var userForm_29;
 var userForm_30;
+var userForm_31;
+var userForm_32;
+var userForm_33;
+var userForm_34;
+var userForm_35;
+var userForm_36;
+var userForm_37;
 
-let check = false;
+var add_salary_page = false
+var add_loan_page = false
+
+var check = false;
 
 let user_info_dict = {}
 Q1()
@@ -1013,9 +945,12 @@ function Q17(){
       }
 
       if(user_info_dict['addtional_salary_input']=="Yes"){
+        add_salary_page = true
         Q18()
       }
       else{
+        user_info_dict['additional_salary'] = 0
+        add_salary_page = false
         Q19()
       }
     }
@@ -1229,9 +1164,12 @@ function Q26(){
       }
 
       if(user_info_dict['exist_loan_input']=="Yes"){
+        add_loan_page = true
         Q27()
       }
       else{
+        user_info_dict['exist_loan_amount'] = 0
+        add_loan_page = false
         Q28()
       }
     }
@@ -1318,12 +1256,12 @@ function Q30(){
   question_counter = 30
   outerForm.innerHTML = ""
   outerForm.innerHTML = '<form id="userForm_30"><div class="page"><div class="title">Email Address</div><br><div class="field"><input type="text" placeholder="ex: entermobile@example.com" id="email" name="user_email"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
-  userForm_31 = document.getElementById("userForm_30")
+  userForm_30 = document.getElementById("userForm_30")
   if("email" in user_info_dict){
     let email  = document.getElementById("email")
     email.value = user_info_dict['email']
   }
-  userForm_31.addEventListener("submit",function(e){
+  userForm_30.addEventListener("submit",function(e){
     e.preventDefault()
     let email  = document.getElementById("email")
   let re = /\S+@\S+\.\S+/
@@ -1336,13 +1274,224 @@ function Q30(){
   }
   else{
     user_info_dict['email'] = email.value
+    Q31()
   }
   })
 }
+
+function Q31(){
+  question_counter = 31
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_31"><div class="page"><div class="title">Which Social Media Apps do you use daily?</div><div class="field"><input type="checkbox" name="status1" style="height: 25px;" id="radio_apps_1"><label for="1">Instagram</label>  <input type="checkbox" name="status2" style="height: 25px;" id="radio_apps_2"><label for="2">Twitter</label> <input type="checkbox" name="status3" style="height: 25px;" id="radio_apps_3"><label for="3">Facebook</label></div><div class="field"><input type="checkbox" name="status4" style="height: 25px;" id="radio_apps_4"><label for="4">Snapchat</label>  <input type="checkbox" name="status5" style="height: 25px;"id="radio_apps_5"><label for="5">TikTok</label> <input type="checkbox" name="status6" style="height: 25px;" id="radio_apps_6"><label for="6">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_31 = document.getElementById("userForm_31")
+  let radio_1  = document.getElementById("radio_apps_1");
+  let radio_2  = document.getElementById("radio_apps_2");
+  let radio_3  = document.getElementById("radio_apps_3");
+  let radio_4  = document.getElementById("radio_apps_4");
+  let radio_5  = document.getElementById("radio_apps_5");
+  let radio_6  = document.getElementById("radio_apps_6");
+  if('social_apps_Instagram' in  user_info_dict){
+    radio_1.checked = true
+  } 
+  if('social_apps_Twitter' in  user_info_dict){
+    radio_2.checked = true
+  }
+  if('social_apps_Facebook' in  user_info_dict){
+    radio_3.checked = true
+  }
+  if('social_apps_Snapchat' in  user_info_dict){
+    radio_4.checked = true
+  }
+  if('social_apps_TikTok' in  user_info_dict){
+    radio_5.checked = true
+  }
+  if('social_apps_Others' in  user_info_dict){
+    radio_6.checked = true
+  }
+  userForm_31.addEventListener("submit",function(e){
+    e.preventDefault()
+    let radio_1  = document.getElementById("radio_apps_1");
+    let radio_2  = document.getElementById("radio_apps_2");
+    let radio_3  = document.getElementById("radio_apps_3");
+    let radio_4  = document.getElementById("radio_apps_4");
+    let radio_5  = document.getElementById("radio_apps_5");
+    let radio_6  = document.getElementById("radio_apps_6");
+    if(radio_1.checked==false && radio_2.checked == false && radio_3.checked == false && radio_4.checked == false && radio_5.checked == false && radio_6.checked == false){
+      alert("Select One Option")
+    }
+    else{
+      if(radio_1.checked==true){
+        user_info_dict['social_apps_Instagram'] = "Instagram"
+      }
+      if(radio_2.checked==true){
+        user_info_dict['social_apps_Twitter'] = "Twitter"
+      }
+      if(radio_3.checked==true){
+        user_info_dict['social_apps_Facebook'] = "Facebook"
+      }
+      if(radio_4.checked==true){
+        user_info_dict['social_apps_Snapchat'] = "Snapchat"
+      }
+      if(radio_5.checked==true){
+        user_info_dict['social_apps_TikTok'] = "TikTok"
+      }
+      if(radio_6.checked==true){
+        user_info_dict['social_apps_Others'] = "Others"
+      }
+      Q32()
+    }
+      
+    })
+}
+
+function Q32(){
+  question_counter = 32
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_32"><div class="page"><div class="title">How often do you speak to your closest family member?</div><div class="field"><select id="family_select"><option></option><option>Hardly</option><option>Once a week</option><option>Daily</option><option>Once a month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_32 = document.getElementById("userForm_32")
+  if('family_speak' in user_info_dict){
+    let select_tag = document.getElementById("family_select")
+    select_tag.value = user_info_dict['family_speak']
+  }
+  userForm_32.addEventListener("submit",function(e){
+    e.preventDefault()
+    let select_tag = document.getElementById("family_select")
+    if(select_tag.value==""){
+      alert("Select One Option")
+    }
+   else{
+      user_info_dict['family_speak'] = select_tag.value
+      Q33()
+    }
+
+    })
+}
+
+function Q33(){
+  question_counter = 33
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_33"><div class="page"><div class="title">How How do you often save your contacts in your phone?</div><div class="field"><select id="save_contacts"><option></option><option>First Name only</option><option>First and Last Name</option><option>Pet Name or Alias</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_33 = document.getElementById("userForm_33")
+  if("save_contacts" in user_info_dict){
+    let select_tag = document.getElementById("save_contacts")
+    select_tag.value = user_info_dict['save_contacts']
+  }
+  userForm_33.addEventListener("submit",function(e){
+    e.preventDefault()
+    let select_tag = document.getElementById("save_contacts")
+    if(select_tag.value==""){
+      alert("Select One Option")
+    }
+    else{
+      user_info_dict['save_contacts'] = select_tag.value
+      Q34()
+    }
+
+    })
+}
+
+function Q34(){
+  question_counter = 34
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_34"><div class="page"><div class="title">Do you use a prepaid or postpaid phone?</div><div class="field"><select id="pre_paid_post"><option></option><option>Prepaid</option><option>Postpaid</option><option>Both</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_34 = document.getElementById("userForm_34")
+  if('pre_paid_post' in user_info_dict){
+    let select_tag = document.getElementById("pre_paid_post")
+    select_tag.value = user_info_dict['pre_paid_post']
+  }
+  userForm_34.addEventListener("submit",function(e){
+    e.preventDefault()
+    let select_tag = document.getElementById("pre_paid_post")
+    if(select_tag.value==""){
+      alert("Select One Option")
+    }
+    else{
+      user_info_dict['pre_paid_post'] = select_tag.value
+      Q35()
+    }
+
+    })
+}
+
+function Q35(){
+  question_counter = 35
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_35"><div class="page"><div class="title">How often do you top up your prepaid phone?</div><div class="field"><select id="top_up"><option></option><option>9-12 times per month</option><option>12 and above times per month</option><option>1-5 times per month</option><option>6-9 times per month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"> </div></div></form>'
+  userForm_35 = document.getElementById("userForm_35")
+  if('top_up' in user_info_dict){
+    let select_tag = document.getElementById("top_up")
+    select_tag.value =  user_info_dict['top_up']
+  }
+  userForm_35.addEventListener("submit",function(e){
+    e.preventDefault()
+    let select_tag = document.getElementById("top_up")
+    if(select_tag.value==""){
+      alert("Select One Option")
+    }
+    else{
+      user_info_dict['top_up'] = select_tag.value
+      Q36()
+    }
+
+    })
+}
+
+function Q36(){
+  check = false
+  question_counter = 36
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_36"><div class="page"><div class="title">Do you have a moniready referrer code?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="referal_code"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_36 = document.getElementById("userForm_36")
+  if('referal_code' in user_info_dict){
+    let ref_code = document.getElementById("referal_code")
+    ref_code.value = user_info_dict['referal_code']
+  }
+  userForm_36.addEventListener("submit",function(e){
+    e.preventDefault()
+    let ref_code = document.getElementById("referal_code")
+    user_info_dict['referal_code'] = ref_code.value
+    Q37()
+    })
+}
+
+function Q37(){
+  question_counter = 37
+  outerForm.innerHTML = ""
+  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  userForm_37 = document.getElementById("userForm_37")
+  if('find_us' in user_info_dict){
+    let select_tag = document.getElementById("find_us")
+    select_tag.value = user_info_dict['find_us']
+  }
+  userForm_37.addEventListener("submit",function(e){
+    e.preventDefault()
+    if(check==true){
+      userForm_37.submit()
+    }
+    let select_tag = document.getElementById("find_us")
+    if(select_tag.value==""){
+      alert("Select One Option")
+    }
+    else{
+      user_info_dict['find_us'] = select_tag.value
+      let variables = document.createElement("input")
+      variables.type = "hidden"
+      variables.value = JSON.stringify(user_info_dict)
+      variables.name = "params"
+      userForm_37.appendChild(variables)
+      check = true
+      userForm_37.submit()
+    }
+
+    })
+
+}
+
+
 // <input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next">
 
 function funPrevious(){
-  console.log(question_counter)
+
   if(question_counter==2){
       Q1()
   }
@@ -1395,7 +1544,13 @@ function funPrevious(){
     Q17()
   }
   else if(question_counter==19){
-    Q18()
+    if(add_salary_page==true){
+      Q18()
+    }
+    else{
+      Q17()
+    }
+    
   }
   else if(question_counter==20){
     Q19()
@@ -1422,7 +1577,13 @@ function funPrevious(){
     Q26()
   }
   else if(question_counter==28){
-    Q27()
+    if(add_loan_page==true){
+      Q27()
+    }
+    else{
+      Q26()
+    }
+    
   }
   else if(question_counter==29){
     Q28()
@@ -1433,7 +1594,27 @@ function funPrevious(){
   else if(question_counter==31){
     Q30()
   }
-
+  else if(question_counter==32){
+    Q31()
+  }
+  else if(question_counter==33){
+    Q32()
+  }
+  else if(question_counter==34){
+    Q33()
+  }
+  else if(question_counter==35){
+    Q34()
+  }
+  else if(question_counter==36){
+    Q35()
+  }
+  else if(question_counter==37){
+    Q36()
+  }
+  else if(question_counter==38){
+    Q37()
+  }
 }
 
 

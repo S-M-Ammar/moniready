@@ -161,8 +161,6 @@ def form_2():
 def end_page():
 
     if(request.method=="POST"):
-        print(request.form['params'])
-        print(type(request.form['params']))
         x = json.dumps(request.form['params'])
         y = json.loads(x)
         print(y)
