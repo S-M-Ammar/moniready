@@ -1,9 +1,11 @@
 from __future__ import print_function
 from flask import Flask,render_template,request
 import os
+from datetime import date
 import pickle
 import numpy as np
 import json
+from datetime import date
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -11,6 +13,16 @@ from google.auth.transport.requests import Request
 from email.mime.text import MIMEText
 from email import errors
 import base64
+import store_data
+
+user_dict = {}
+
+
+#*******************************************Sheet API************************************************************#
+# The ID and range of a sample spreadsheet.
+SAMPLE_SPREADSHEET_ID = '16ne42-2Sp62SnTw221SPOdCmwJOvBaiq9CJ2apAWTOg'
+sheet_service = store_data.get_sheet_service()
+#*****************************************************************************************************************#
 
 
 #********************************************Gmail API************************************************************#
@@ -159,15 +171,17 @@ def form_2():
 
 @app.route("/end.html",methods=['GET','POST'])
 def end_page():
-
+    application_status = ""
     if(request.method=="POST"):
+        user_dict = {}
         x = json.dumps(request.form['params'])
         y = eval(json.loads(x))
-        print(type(y))
+        user_dict = y
         check = check_application_for_rejection(y['salary'],y['additional_salary'],y['mortgage_expense'],y['food_expense'],y['transportation_expense'],y['light_expense'],y['water_expense'],y['grooming_expense'],y['entertainment_expense'],y['exist_loan_amount'],y['kids_expense'])
         if(check ==  False):
           pay_check = prediction_by_model(y['age'],y['amount_borrowed'],y['light_expense'],y['marital_status'],y['occupation_status'],y['working_with_employ'],y['residential_status'],y['living_with_address'],y['kids'],y['loan_purpose'])
           if(pay_check==True):
+              application_status = "Approved"
               message = MIMEText("Hi. Your application is approved. Go to the followin link to complete the process https://moniready.aidaform.com/moniready-upload-form")
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
@@ -181,6 +195,7 @@ def end_page():
               except:
                   print("an error occured")
           else:
+              application_status = "Rejected"
               message = MIMEText("Sorry. Your application is not approved")
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
@@ -194,6 +209,7 @@ def end_page():
               except:
                   print("an error occured")
         else:
+            application_status = "Rejected"
             message = MIMEText("Sorry. Your application is not approved")
             message['to']=y['email']
             message['from'] = "monireadyinfo@gmail.com"
@@ -206,6 +222,42 @@ def end_page():
                 print("your message has been sent")
             except:
                 print("an error occured")
+    params = []
+    social_apps=""
+    if('social_apps_Instagram' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_Instagram']+","
+      del user_dict['social_apps_Instagram']
+    if('social_apps_Facebook' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_Facebook']+","
+      del user_dict['social_apps_Facebook']
+    if('social_apps_Twitter' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_Twitter']+","
+      del user_dict['social_apps_Twitter']
+    if('social_apps_Snapchat' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_Snapchat']+","
+      del user_dict['social_apps_Snapchat']
+    if('social_apps_TikTok' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_TikTok']+","
+      del user_dict['social_apps_TikTok']
+    if('social_apps_Others' in user_dict.keys()):
+      social_apps = social_apps + user_dict['social_apps_Snapchat']+","
+      del user_dict['social_apps_Others']
+
+    user_dict['submission_date'] = str(date.today())
+    user_dict['social_apps'] = social_apps
+    user_dict['application_status'] = application_status
+
+    for x in user_dict.values():
+      params.append(x)
+    
+    data_ = [params]
+
+    try:
+      res = sheet_service.spreadsheets().values().append(spreadsheetId=SAMPLE_SPREADSHEET_ID,range="Sheet1",valueInputOption="USER_ENTERED",body={"values":data_},insertDataOption='INSERT_ROWS').execute()
+      print(res)
+    except Exception as e:
+      print(e)
+
     return render_template('end.html')
   
 

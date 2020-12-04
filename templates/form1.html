@@ -1440,7 +1440,7 @@ function Q36(){
   check = false
   question_counter = 36
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_36"><div class="page"><div class="title">Do you have a moniready referrer code?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="referal_code"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_36"><div class="page"><div class="title">Do you have a moniready referral code?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="referal_code"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
   userForm_36 = document.getElementById("userForm_36")
   if('referal_code' in user_info_dict){
     let ref_code = document.getElementById("referal_code")
@@ -1457,7 +1457,7 @@ function Q36(){
 function Q37(){
   question_counter = 37
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Submit"></div></div></form>'
   userForm_37 = document.getElementById("userForm_37")
   if('find_us' in user_info_dict){
     let select_tag = document.getElementById("find_us")
