@@ -162,17 +162,15 @@ def end_page():
 
     if(request.method=="POST"):
         x = json.dumps(request.form['params'])
-        y = json.loads(x)
-        print(y)
-        return render_template('end.html')
-    '''
-        check = check_application_for_rejection(request.form['home_salary'],request.form['income_additional'],request.form['mortgage_value'],request.form['food_value'],request.form['transport_value'],request.form['light_expenditure'],request.form['water_value'],request.form['grooming_value'],request.form['entertainment_value'],request.form['current_loan_payment'],request.form['kids_value'])
+        y = eval(json.loads(x))
+        print(type(y))
+        check = check_application_for_rejection(y['salary'],y['additional_salary'],y['mortgage_expense'],y['food_expense'],y['transportation_expense'],y['light_expense'],y['water_expense'],y['grooming_expense'],y['entertainment_expense'],y['exist_loan_amount'],y['kids_expense'])
         if(check ==  False):
-          pay_check = prediction_by_model(request.form['user_age'],request.form['moneyBorrow'],request.form['light_expenditure'],request.form['Marital Status'],request.form['occupation_tag'],request.form['working_with_employee'],request.form['Residential Status'],request.form['present address'],request.form['kids'],request.form['LoanPurpose'])
+          pay_check = prediction_by_model(y['age'],y['amount_borrowed'],y['light_expense'],y['marital_status'],y['occupation_status'],y['working_with_employ'],y['residential_status'],y['living_with_address'],y['kids'],y['loan_purpose'])
           if(pay_check==True):
               message = MIMEText("Hi. Your application is approved. Go to the followin link to complete the process https://moniready.aidaform.com/moniready-upload-form")
-              message['to']=request.form['user_email']
-              message['from'] = "syed.ammar.98sep@gmail.com"
+              message['to']=y['email']
+              message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
               raw = base64.urlsafe_b64encode(message.as_bytes())
               raw = raw.decode()
@@ -184,8 +182,8 @@ def end_page():
                   print("an error occured")
           else:
               message = MIMEText("Sorry. Your application is not approved")
-              message['to']=request.form['user_email']
-              message['from'] = "syed.ammar.98sep@gmail.com"
+              message['to']=y['email']
+              message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
               raw = base64.urlsafe_b64encode(message.as_bytes())
               raw = raw.decode()
@@ -197,8 +195,8 @@ def end_page():
                   print("an error occured")
         else:
             message = MIMEText("Sorry. Your application is not approved")
-            message['to']=request.form['user_email']
-            message['from'] = "syed.ammar.98sep@gmail.com"
+            message['to']=y['email']
+            message['from'] = "monireadyinfo@gmail.com"
             message['subject']="Moniready Application"
             raw = base64.urlsafe_b64encode(message.as_bytes())
             raw = raw.decode()
@@ -208,7 +206,8 @@ def end_page():
                 print("your message has been sent")
             except:
                 print("an error occured")
-    '''
+    return render_template('end.html')
+  
 
 
 if __name__ == '__main__':
