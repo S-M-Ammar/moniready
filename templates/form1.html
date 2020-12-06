@@ -333,6 +333,8 @@ var userForm_37;
 
 var add_salary_page = false
 var add_loan_page = false
+var kids_amount_page = true
+var top_up_page = true
 
 var check = false;
 
@@ -341,7 +343,7 @@ Q1()
 
 function Q1(){
   question_counter = 1
-  outerForm.innerHTML = '<form id="userForm_1"><div class="page slide-page"><div class="title">Basic Info:</div><div class="field"><div class="label">First Name</div><input type="text" name="firstName" id="firstName" ></div><div class="field"><div class="label">Last Name</div><input type="text" name="lastName" id="lastName" ></div><div class="field"><input class="firstNext next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_1"><div class="page slide-page"><div class="title">Basic Info:</div><div class="field"><div class="label">First Name</div><input type="text" name="firstName" id="firstName" ></div><div class="field"><div class="label">Last Name</div><input type="text" name="lastName" id="lastName" ></div><div class="field"><input class="firstNext next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_1 = document.getElementById("userForm_1")
   if("firstName" in user_info_dict){
     let first_name_ = document.getElementById("firstName");
@@ -371,7 +373,7 @@ function Q1(){
 function Q2(){
  question_counter = 2
  outerForm.innerHTML=""
- outerForm.innerHTML = '<form id="userForm_2"><div class="page"><div class="title">Gender</div><div class="field"><input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale"><label for="male">Male</label>  <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"><label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers"><label for="others">Others</label></div><div class="field btns"><input class="prev-1 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-1 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+ outerForm.innerHTML = '<form id="userForm_2"><div class="page"><div class="title">Gender</div><div class="field"><input type="radio" name="status" style="height: 30px;" value="Male" id="radioMale"><label for="male">Male</label>  <input type="radio" name="status" style="height: 30px;" value="Female" id="radioFemale"><label for="female">Female</label> <input type="radio" name="status" style="height: 30px;" value="Others" id="radioOthers"><label for="others">Others</label></div><div class="field btns"><input class="prev-1 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-1 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
  userForm_2 = document.getElementById("userForm_2")
  if("gender" in user_info_dict){
 
@@ -415,7 +417,7 @@ function Q2(){
 function Q3(){
   question_counter = 3
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_3"><div class="page"><div class="title">Nationality</div><div class="field"><input type="radio" name="Nationality" id="radio_N_Jamaican" style="height: 30px;"><label for="jamaican">Jamaican</label><input type="radio" name="Nationality" id="radio_N_Others" style="height: 30px;"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_3"><div class="page"><div class="title">Nationality</div><div class="field"><input type="radio" name="Nationality" id="radio_N_Jamaican" style="height: 30px;"><label for="jamaican">Jamaican</label><input type="radio" name="Nationality" id="radio_N_Others" style="height: 30px;"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_3 = document.getElementById("userForm_3")
   if("nationality" in user_info_dict){
     let radio_1_  = document.getElementById("radio_N_Jamaican");
@@ -449,7 +451,7 @@ function Q3(){
 function Q4(){
   question_counter = 4
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_4"><div class="page"><div class="title">How old are you?</div><br><div class="field"><div class="label">Enter your age</div><input type="number" name="user_age" placeholder="e.g. 32" value="" id="age_field"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_4"><div class="page"><div class="title">How old are you?</div><br><div class="field"><div class="label">Enter your age</div><input type="number" name="user_age" placeholder="e.g. 32" value="" id="age_field"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_4 = document.getElementById("userForm_4")
   if("age" in user_info_dict){
     let number_ = document.getElementById("age_field")
@@ -471,7 +473,7 @@ function Q4(){
 function Q5(){
   question_counter = 5
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_5"><div class="page"><div class="title">Marital Status</div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="married" id="radio_married"><label for="married">Married</label><input type="radio" name="Marital Status" style="height: 30px;" value="single" id="radio_single"><label for="single">Single</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Divorced/Separated" id="radio_divorced"><label for="divorce">Divorced/Seperated</label><input type="radio" name="Marital Status" style="height: 30px;" value="Widowed" id="radio_widowed"><label for="widowed">Widowed</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Living Together" id="radio_living_together"><label for="tohether">Living Together/Common</label><input type="radio" name="Marital Status" style="height: 30px;" value="Others" id="radio_ms_others"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_5"><div class="page"><div class="title">Marital Status</div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="married" id="radio_married"><label for="married">Married</label><input type="radio" name="Marital Status" style="height: 30px;" value="single" id="radio_single"><label for="single">Single</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Divorced/Separated" id="radio_divorced"><label for="divorce">Divorced/Seperated</label><input type="radio" name="Marital Status" style="height: 30px;" value="Widowed" id="radio_widowed"><label for="widowed">Widowed</label></div><div class="field"><input type="radio" name="Marital Status" style="height: 30px;" value="Living Together" id="radio_living_together"><label for="tohether">Living Together/Common</label><input type="radio" name="Marital Status" style="height: 30px;" value="Others" id="radio_ms_others"><label for="others">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_5 = document.getElementById("userForm_5")
   if("marital_status" in user_info_dict){
     let radio_1_  = document.getElementById("radio_married");
@@ -541,7 +543,7 @@ function Q5(){
 function Q6(){
   question_counter = 6
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_6"><div class="page"><div class="title">Employment Status</div><div class="field"><select id="EmploymentStatus"><option></option><option>Employed</option><option>Self Employed</option><option>Unemployed without income</option><option>Unemployed with income</option><option>Prisoner</option><option>Retired</option><option>Temporary</option><option>Commission</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_6"><div class="page"><div class="title">Employment Status</div><div class="field"><select id="EmploymentStatus"><option></option><option>Employed</option><option>Self Employed</option><option>Unemployed without income</option><option>Unemployed with income</option><option>Prisoner</option><option>Retired</option><option>Temporary</option><option>Commission</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_6 = document.getElementById("userForm_6")
   if("employment_status" in user_info_dict){
     let select_tag_ = document.getElementById("EmploymentStatus")
@@ -564,7 +566,7 @@ function Q6(){
 function Q7(){
   question_counter = 7
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_7"><div class="page"><div class="title">What is your occupation</div><div class="field"><select id="occupationSelect" name="occupation_tag"><option></option><option>Clerk</option><option>Civil Servant</option><option>Customer Service</option><option>Driver</option><option>Farmer</option><option>Factory Worker</option><option>Security Guard</option><option>House Hold Helper</option><option>Doctor Or Lawyer</option><option>Manager</option><option>Nurse Or Teacher</option><option>Business Owner</option><option>Police Or Military</option><option>Professional</option><option>Sales</option><option>Supervisor</option><option>Skilled Worker</option><option>Corporate Executive</option><option>Financial Advisor</option><option>Unemployed With Income</option><option>Others</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_7"><div class="page"><div class="title">What is your occupation</div><div class="field"><select id="occupationSelect" name="occupation_tag"><option></option><option>Clerk</option><option>Civil Servant</option><option>Customer Service</option><option>Driver</option><option>Farmer</option><option>Factory Worker</option><option>Security Guard</option><option>House Hold Helper</option><option>Doctor Or Lawyer</option><option>Manager</option><option>Nurse Or Teacher</option><option>Business Owner</option><option>Police Or Military</option><option>Professional</option><option>Sales</option><option>Supervisor</option><option>Skilled Worker</option><option>Corporate Executive</option><option>Financial Advisor</option><option>Unemployed With Income</option><option>Others</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_7 = document.getElementById("userForm_7")
   if("occupation_status" in user_info_dict){
     let select_tag_ = document.getElementById("occupationSelect")
@@ -587,7 +589,7 @@ function Q7(){
 function Q8(){
   question_counter = 8
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_8"><div class="page"><div class="title">How long you have been working with your present EMPLOYER?</div><div class="field"><input type="radio" value="0 to 1year" name="working_with_employee" style="height: 30px;" id="radio_employee_working_1"><label for="less1">0 to 1year</label><input type="radio" value="2 to 9Years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_2"><label for="2-9">2 to 9Years</label></div><div class="field"><input type="radio" value="10 to 24Years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_3"><label for="10-24">10 to 24Years</label><input type="radio" value="25+years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_4"><label for="25+">25+years</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_8"><div class="page"><div class="title">How long you have been working with your present EMPLOYER?</div><div class="field"><input type="radio" value="0 to 1year" name="working_with_employee" style="height: 30px;" id="radio_employee_working_1"><label for="less1">0 to 1year</label><input type="radio" value="2 to 9Years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_2"><label for="2-9">2 to 9Years</label></div><div class="field"><input type="radio" value="10 to 24Years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_3"><label for="10-24">10 to 24Years</label><input type="radio" value="25+years" name="working_with_employee" style="height: 30px;" id="radio_employee_working_4"><label for="25+">25+years</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_8 = document.getElementById("userForm_8")
   if("working_with_employ" in user_info_dict){
     let radio_1_  = document.getElementById("radio_employee_working_1");
@@ -637,7 +639,7 @@ function Q8(){
 function Q9(){
   question_counter = 9
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_9"><div class="page"><div class="title">Residential Status</div><div class="field"><select id="ResidentialSelect" name="Residential Status"><option></option><option>Owner:paying Mortgage</option><option>Family Residence</option><option>Owner:Fully Paid</option><option>Lease</option><option>Living With Parents</option><option>Rent</option><option>Share</option><option>Other</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_9"><div class="page"><div class="title">Residential Status</div><div class="field"><select id="ResidentialSelect" name="Residential Status"><option></option><option>Owner:paying Mortgage</option><option>Family Residence</option><option>Owner:Fully Paid</option><option>Lease</option><option>Living With Parents</option><option>Rent</option><option>Share</option><option>Other</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_9 = document.getElementById("userForm_9")
   if("residential_status" in user_info_dict){
     let select_tag_ = document.getElementById("ResidentialSelect")
@@ -659,7 +661,7 @@ function Q9(){
 function Q10(){
   question_counter = 10
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_10"><div class="page"><div class="title">Address</div><label style="margin-right: 30px;">Enter your current living address here</label><div class="field"><input type="text" placeholder="House # , Street # , ......" name="address" id="user_address"></div><div class="field"><input type="text" placeholder="Parish" name="parish" id="user_address_parish"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_10"><div class="page"><div class="title">Address</div><label style="margin-right: 30px;">Enter your current living address here</label><div class="field"><input type="text" placeholder="House # , Street # , ......" name="address" id="user_address"></div><div class="field"><input type="text" placeholder="Parish" name="parish" id="user_address_parish"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_10 = document.getElementById("userForm_10")
   if("address" in user_info_dict){
     let address_ = document.getElementById("user_address");
@@ -689,7 +691,7 @@ function Q10(){
 function Q11(){
   question_counter = 11
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_11"><div class="page"><div class="title">How long you have been living at your present address?</div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_1" value="0 to 1year"><label for="less1">0 to 1year</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_2" value="2 to 9Years"><label for="2-9">2 to 9Years</label></div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_3" value="10 to 24Years"><label for="10-24">10 to 24Years</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_4" value="25+years"><label for="25+">25+years</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_11"><div class="page"><div class="title">How long you have been living at your present address?</div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_1" value="0 to 1year"><label for="less1">0 to 1year</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_2" value="2 to 9Years"><label for="2-9">2 to 9Years</label></div><div class="field"><input type="radio" name="present address" style="height: 30px;" id="radio_address_3" value="10 to 24Years"><label for="10-24">10 to 24Years</label><input type="radio" name="present address" style="height: 30px;" id="radio_address_4" value="25+years"><label for="25+">25+years</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_11 = document.getElementById("userForm_11")
   if("living_with_address" in user_info_dict){
     let radio_1  = document.getElementById("radio_address_1");
@@ -739,20 +741,28 @@ function Q11(){
 function Q12(){
   question_counter = 12
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_12"><div class="page"><div class="title">How many kids do you have?</div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_1" value="0"><label for="0">0</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_2" value="1"><label for="1">1</label></div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_3" value="2"><label for="2">2</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_4" value="Above 2"><label for="more">Above 2</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_12"><div class="page"><div class="title">How many kids do you have?</div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_1" value="0"><label for="0">0</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_2" value="1"><label for="1">1</label></div><div class="field"><input type="radio" name="kids" style="height: 30px;" id="radio_kids_3" value="2"><label for="2">2</label><input type="radio" name="kids" style="height: 30px;" id="radio_kids_4" value="Above 2"><label for="more">Above 2</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_12 = document.getElementById("userForm_12")
+  let radio_1  = document.getElementById("radio_kids_1");
+  let radio_2  = document.getElementById("radio_kids_2");
+  let radio_3  = document.getElementById("radio_kids_3");
+  let radio_4  = document.getElementById("radio_kids_4");
   if("kids" in user_info_dict){
     if(user_info_dict['kids'] == "0"){
       radio_1.checked = true
+      kids_amount_page = false
     }
     else if(user_info_dict['kids'] == "1"){
       radio_2.checked = true
+      kids_amount_page = true
     }
     else if(user_info_dict['kids'] == "2"){
       radio_3.checked = true
+      kids_amount_page = true
     }
     else if(user_info_dict['kids'] == "Above 2"){
       radio_4.checked = true
+      kids_amount_page = true
     }
   }
   userForm_12.addEventListener("submit",function(e){
@@ -767,15 +777,19 @@ function Q12(){
     else{
       if(radio_1.checked==true){
         user_info_dict['kids'] = "0"
+        kids_amount_page = false
       }
       else if(radio_2.checked==true){
         user_info_dict['kids'] = "1"
+        kids_amount_page = true
       }
       else if(radio_3.checked==true){
         user_info_dict['kids'] = "2"
+        kids_amount_page = true
       }
       else if(radio_4.checked==true){
         user_info_dict['kids'] = "Above 2"
+        kids_amount_page = true
       }
       Q13()
     }
@@ -785,7 +799,7 @@ function Q12(){
 function Q13(){
   question_counter = 13
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_13"><div class="page"><div class="title">What is the main purpose of the loan?</div><div class="field"><select id="LoanSelect" name="LoanPurpose"><option></option><option>Personal</option><option>Travel</option><option>Clothing</option><option>Air Conditioning or Heating Units</option><option>Bedding</option><option>Business Equipments</option><option>Dining</option><option>Refrigerator</option><option>Laundry-Washer,Dryer</option><option>Outdoor:Mower,Water Tank,Generator</option><option>Stoves</option><option>Upholstered item-Settees,Liv Room Suit</option><option>Video-Tv,Dvd,Home Theater</option><option>Audio-Hifi,Component Sets,Radios</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_13"><div class="page"><div class="title">What is the main purpose of the loan?</div><div class="field"><select id="LoanSelect" name="LoanPurpose"><option></option><option>Personal</option><option>Travel</option><option>Clothing</option><option>Air Conditioning or Heating Units</option><option>Bedding</option><option>Business Equipments</option><option>Dining</option><option>Refrigerator</option><option>Laundry-Washer,Dryer</option><option>Outdoor:Mower,Water Tank,Generator</option><option>Stoves</option><option>Upholstered item-Settees,Liv Room Suit</option><option>Video-Tv,Dvd,Home Theater</option><option>Audio-Hifi,Component Sets,Radios</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_13 = document.getElementById("userForm_13")
   if("loan_purpose" in  user_info_dict){
     let select_tag = document.getElementById("LoanSelect")
@@ -807,7 +821,7 @@ function Q13(){
 function Q14(){
   question_counter = 14
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_14"><div class="page"><div class="title">How much money do you want to borrow?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="amount_borrowed_field" name="moneyBorrow"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_14"><div class="page"><div class="title">How much money do you want to borrow?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="amount_borrowed_field" name="moneyBorrow"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_14 = document.getElementById("userForm_14")
   if("amount_borrowed" in user_info_dict){
     let number = document.getElementById("amount_borrowed_field")
@@ -816,8 +830,11 @@ function Q14(){
   userForm_14.addEventListener("submit",function(e){
     e.preventDefault()
     let number = document.getElementById("amount_borrowed_field")
-    if(number.value<=0 || number.value==""){
+    if(number.value<=0 || number.value=="" ){
         alert("Enter Valid Amount")
+    }
+    else if(number.value<20000 || number.value>100000){
+      alert("Amount range is between 20,000$ to 100,000$")
     }
     else{
       user_info_dict['amount_borrowed'] = number.value
@@ -829,7 +846,7 @@ function Q14(){
 function Q15(){
   question_counter = 15
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_15"><div class="page"><div class="title">How long do you want the loan to last</div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_1"><label for="1">1Month</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_2"><label for="2">2Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_3"><label for="3">3Months</label></div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_4"><label for="4">4Months</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_5"><label for="5">5Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_6"><label for="6">6Months</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_15"><div class="page"><div class="title">How long do you want the loan to last</div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_1"><label for="1">1Month</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_2"><label for="2">2Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_3"><label for="3">3Months</label></div><div class="field"><input type="radio" name="status" style="height: 25px;" id="radio_loan_last_4"><label for="4">4Months</label>  <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_5"><label for="5">5Months</label> <input type="radio" name="status" style="height: 25px;" id="radio_loan_last_6"><label for="6">6Months</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_15 = document.getElementById("userForm_15")
   if("loan_last" in user_info_dict){
     let radio_1  = document.getElementById("radio_loan_last_1");
@@ -895,7 +912,7 @@ function Q15(){
 function Q16(){
   question_counter = 16
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_16"><div class="page"><div class="title">What is your take home salary after tax each month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="salary_after_tax" name="home_salary"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_16"><div class="page"><div class="title">What is your take home salary after tax each month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="salary_after_tax" name="home_salary"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_16 = document.getElementById("userForm_16")
   if("salary" in user_info_dict){
     let number = document.getElementById("salary_after_tax")
@@ -917,7 +934,7 @@ function Q16(){
 function Q17(){
   question_counter = 17
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_17"><div class="page"><div class="title">Do you have additional source of income?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_additional_salary_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_additional_salary_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_17"><div class="page"><div class="title">Do you have additional source of income?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_additional_salary_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_additional_salary_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_17 = document.getElementById("userForm_17")
   if("addtional_salary_input" in user_info_dict){
     let radio_1  = document.getElementById("radio_additional_salary_1");
@@ -925,14 +942,15 @@ function Q17(){
     if(user_info_dict['addtional_salary_input'] == "Yes"){
       radio_1.checked = true
     }
-    else if(user_info_dict['addtional_salary_input'] == "No"){
-      radio_2.checked =true
+    else if(user_info_dict['addtional_salary_input'] == "NO"){
+      radio_2.checked = true
     }
   }
   userForm_17.addEventListener("submit",function(e){
     e.preventDefault()
     let radio_1  = document.getElementById("radio_additional_salary_1");
     let radio_2  = document.getElementById("radio_additional_salary_2");
+
     if(radio_1.checked== false && radio_2.checked==false){
       alert("Select One Option")
     }
@@ -960,7 +978,7 @@ function Q17(){
 function Q18(){
   question_counter = 18
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_18"><div class="page"><div class="title">Enter Additional Income Amount</div><br><div class="field"><input type="number" name="income_additional" style="height: 30px;" id="additional_salary" value=""></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_18"><div class="page"><div class="title">Enter Additional Income Amount</div><br><div class="field"><input type="number" name="income_additional" style="height: 30px;" id="additional_salary" value=""></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_18 = document.getElementById("userForm_18")
   if("additional_salary" in user_info_dict){
     let number = document.getElementById("additional_salary")
@@ -982,7 +1000,7 @@ function Q18(){
 function Q19(){
   question_counter = 19
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_19"><div class="page"><div class="title">How much do you spend on rent/mortgage per month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="mortgage_amount" name="mortgage_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_19"><div class="page"><div class="title">How much do you spend on rent/mortgage per month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="mortgage_amount" name="mortgage_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_19 = document.getElementById("userForm_19")
   if("mortgage_expense" in user_info_dict){
     let number = document.getElementById("mortgage_amount")
@@ -1004,7 +1022,7 @@ function Q19(){
 function Q20(){
   question_counter = 20
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_20"><div class="page"><div class="title">How much do you spend on food every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="food_amount" name="food_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_20"><div class="page"><div class="title">How much do you spend on food every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="food_amount" name="food_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_20 = document.getElementById("userForm_20")
   if("food_expense" in user_info_dict){
     let number = document.getElementById("food_amount")
@@ -1026,7 +1044,7 @@ function Q20(){
 function Q21(){
   question_counter = 21
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_21"><div class="page"><div class="title">How much do you spend on transportation every month?</div><br><div class="field"><input type="number" placeholder="e.g. 25000" id="transportation_amount" name="transport_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_21"><div class="page"><div class="title">How much do you spend on transportation every month?</div><br><div class="field"><input type="number" placeholder="e.g. 25000" id="transportation_amount" name="transport_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_21 = document.getElementById("userForm_21")
   if("transportation_expense" in user_info_dict){
     let number = document.getElementById("transportation_amount")
@@ -1048,7 +1066,7 @@ function Q21(){
 function Q22(){
   question_counter = 22
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_22"><div class="page"><div class="title">How much do you spend on light per month?</div><br><div class="field"><input type="number" placeholder="e.g. 5500" id="light_amount" name="light_expenditure"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_22"><div class="page"><div class="title">How much do you spend on light per month?</div><br><div class="field"><input type="number" placeholder="e.g. 5500" id="light_amount" name="light_expenditure"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_22 = document.getElementById("userForm_22")
   if("light_expense" in user_info_dict){
     let number = document.getElementById("light_amount")
@@ -1070,7 +1088,7 @@ function Q22(){
 function Q23(){
   question_counter = 23
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_23"><div class="page"><div class="title">How much do you spend on water per month?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="water_amount" name="water_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_23"><div class="page"><div class="title">How much do you spend on water per month?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="water_amount" name="water_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_23 = document.getElementById("userForm_23")
   if("water_expense" in user_info_dict){
     let number = document.getElementById("water_amount")
@@ -1092,7 +1110,7 @@ function Q23(){
 function Q24(){
   question_counter = 24
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_24"><div class="page"><div class="title">How much do you spend on grooming every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="grooming_amount" name="grooming_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_24"><div class="page"><div class="title">How much do you spend on grooming every month?</div><br><div class="field"><input type="number" placeholder="e.g. 32000" id="grooming_amount" name="grooming_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_24 = document.getElementById("userForm_24")
   if("grooming_expense" in user_info_dict){
     let number = document.getElementById("grooming_amount")
@@ -1114,7 +1132,7 @@ function Q24(){
 function Q25(){
   question_counter = 25
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_25"><div class="page"><div class="title">How much do you spend on entertainment every month?</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="entertainment_amount" name="entertainment_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_25"><div class="page"><div class="title">How much do you spend on entertainment every month?</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="entertainment_amount" name="entertainment_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_25 = document.getElementById("userForm_25")
   if('entertainment_expense' in user_info_dict){
     let number = document.getElementById("entertainment_amount")
@@ -1136,7 +1154,7 @@ function Q25(){
 function Q26(){
   question_counter = 26
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_26"><div class="page"><div class="title">Do you have any other existing loans?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_existing_loan_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_existing_loan_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_26"><div class="page"><div class="title">Do you have any other existing loans?</div><br><div class="field"><input type="radio" value="Yes" name="value" style="height: 30px;" id="radio_existing_loan_1">Yes<input type="radio" value="No" name="value" style="height: 30px;" id="radio_existing_loan_2">No</div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_26 = document.getElementById("userForm_26")
   if('exist_loan_input' in user_info_dict){
     let radio_1  = document.getElementById("radio_existing_loan_1");
@@ -1170,7 +1188,12 @@ function Q26(){
       else{
         user_info_dict['exist_loan_amount'] = 0
         add_loan_page = false
-        Q28()
+        if(kids_amount_page==true){
+          Q28()
+        }
+        else{
+          Q29()
+        }
       }
     }
   })
@@ -1179,7 +1202,7 @@ function Q26(){
 function Q27(){
   question_counter = 27
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_27"><div class="page"><div class="title">Enter amount of loan </div><br><div class="field"><input type="number" name="current_loan_payment" id="loan_amount_exists"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_27"><div class="page"><div class="title">Enter amount of loan </div><br><div class="field"><input type="number" name="current_loan_payment" id="loan_amount_exists"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_27 = document.getElementById("userForm_27")
   if('exist_loan_amount' in user_info_dict){
     let loan_check = document.getElementById("loan_amount_exists")
@@ -1193,7 +1216,14 @@ function Q27(){
   }
   else{
     user_info_dict['exist_loan_amount'] = loan_check.value
-    Q28()
+    if(kids_amount_page==true){
+      Q28()
+    }
+    else{
+      user_info_dict['kids_expense'] = 0
+      Q29()
+    }
+    
   }
   })
 }
@@ -1201,11 +1231,11 @@ function Q27(){
 function Q28(){
   question_counter = 28
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_28"><div class="page"><div class="title">How much do you spend on your kid/s every month??</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="kids_amount" name="kids_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_28"><div class="page"><div class="title">How much do you spend on your kid/s every month??</div><br><div class="field"><input type="number" placeholder="e.g. 15000" id="kids_amount" name="kids_value"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_28 = document.getElementById("userForm_28")
   if("kids_expense" in user_info_dict){
     let number = document.getElementById("kids_amount")
-    number.value = user_info_dict['kids_expense'] = number.value
+    number.value = user_info_dict['kids_expense']
   }
   userForm_28.addEventListener("submit",function(e){
     e.preventDefault()
@@ -1223,7 +1253,7 @@ function Q28(){
 function Q29(){
   question_counter = 29
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_29"><div class="page"><div class="title">What is your phone number?</div><br><div class="field"><input type="text" placeholder="Enter Mobile Phone Number" id="phone_mobile"></div><div class="field"><input type="text" placeholder="Enter Work Phone Number" id="phone_work"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_29"><div class="page"><div class="title">What is your phone number?</div><br><div class="field"><input type="text" placeholder="Enter Mobile Phone Number" id="phone_mobile"></div><div class="field"><input type="text" placeholder="Enter Work Phone Number" id="phone_work"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_29 = document.getElementById("userForm_29")
   if("mobile_number" in user_info_dict){
     let number_1 = document.getElementById("phone_mobile")
@@ -1255,7 +1285,7 @@ function Q29(){
 function Q30(){
   question_counter = 30
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_30"><div class="page"><div class="title">Email Address</div><br><div class="field"><input type="text" placeholder="ex: entermobile@example.com" id="email" name="user_email"></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_30"><div class="page"><div class="title">Email Address</div><br><div class="field"><input type="text" placeholder="ex: entermobile@example.com" id="email" name="user_email"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_30 = document.getElementById("userForm_30")
   if("email" in user_info_dict){
     let email  = document.getElementById("email")
@@ -1282,7 +1312,7 @@ function Q30(){
 function Q31(){
   question_counter = 31
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_31"><div class="page"><div class="title">Which Social Media Apps do you use daily?</div><div class="field"><input type="checkbox" name="status1" style="height: 25px;" id="radio_apps_1"><label for="1">Instagram</label>  <input type="checkbox" name="status2" style="height: 25px;" id="radio_apps_2"><label for="2">Twitter</label> <input type="checkbox" name="status3" style="height: 25px;" id="radio_apps_3"><label for="3">Facebook</label></div><div class="field"><input type="checkbox" name="status4" style="height: 25px;" id="radio_apps_4"><label for="4">Snapchat</label>  <input type="checkbox" name="status5" style="height: 25px;"id="radio_apps_5"><label for="5">TikTok</label> <input type="checkbox" name="status6" style="height: 25px;" id="radio_apps_6"><label for="6">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_31"><div class="page"><div class="title">Which Social Media Apps do you use daily?</div><div class="field"><input type="checkbox" name="status1" style="height: 25px;" id="radio_apps_1"><label for="1">Instagram</label>  <input type="checkbox" name="status2" style="height: 25px;" id="radio_apps_2"><label for="2">Twitter</label> <input type="checkbox" name="status3" style="height: 25px;" id="radio_apps_3"><label for="3">Facebook</label></div><div class="field"><input type="checkbox" name="status4" style="height: 25px;" id="radio_apps_4"><label for="4">Snapchat</label>  <input type="checkbox" name="status5" style="height: 25px;"id="radio_apps_5"><label for="5">TikTok</label> <input type="checkbox" name="status6" style="height: 25px;" id="radio_apps_6"><label for="6">Others</label></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_31 = document.getElementById("userForm_31")
   let radio_1  = document.getElementById("radio_apps_1");
   let radio_2  = document.getElementById("radio_apps_2");
@@ -1347,7 +1377,7 @@ function Q31(){
 function Q32(){
   question_counter = 32
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_32"><div class="page"><div class="title">How often do you speak to your closest family member?</div><div class="field"><select id="family_select"><option></option><option>Hardly</option><option>Once a week</option><option>Daily</option><option>Once a month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_32"><div class="page"><div class="title">How often do you speak to your closest family member?</div><div class="field"><select id="family_select"><option></option><option>Hardly</option><option>Once a week</option><option>Daily</option><option>Once a month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_32 = document.getElementById("userForm_32")
   if('family_speak' in user_info_dict){
     let select_tag = document.getElementById("family_select")
@@ -1370,7 +1400,7 @@ function Q32(){
 function Q33(){
   question_counter = 33
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_33"><div class="page"><div class="title">How How do you often save your contacts in your phone?</div><div class="field"><select id="save_contacts"><option></option><option>First Name only</option><option>First and Last Name</option><option>Pet Name or Alias</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_33"><div class="page"><div class="title">How How do you often save your contacts in your phone?</div><div class="field"><select id="save_contacts"><option></option><option>First Name only</option><option>First and Last Name</option><option>Pet Name or Alias</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_33 = document.getElementById("userForm_33")
   if("save_contacts" in user_info_dict){
     let select_tag = document.getElementById("save_contacts")
@@ -1393,7 +1423,7 @@ function Q33(){
 function Q34(){
   question_counter = 34
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_34"><div class="page"><div class="title">Do you use a prepaid or postpaid phone?</div><div class="field"><select id="pre_paid_post"><option></option><option>Prepaid</option><option>Postpaid</option><option>Both</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_34"><div class="page"><div class="title">Do you use a prepaid or postpaid phone?</div><div class="field"><select id="pre_paid_post"><option></option><option>Prepaid</option><option>Postpaid</option><option>Both</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_34 = document.getElementById("userForm_34")
   if('pre_paid_post' in user_info_dict){
     let select_tag = document.getElementById("pre_paid_post")
@@ -1407,7 +1437,14 @@ function Q34(){
     }
     else{
       user_info_dict['pre_paid_post'] = select_tag.value
-      Q35()
+      if(user_info_dict['pre_paid_post']=='Postpaid'){
+        top_up_page = false
+        user_info_dict['top_up'] = ""
+        Q36()
+      }
+      else{
+        Q35()  
+      }
     }
 
     })
@@ -1416,7 +1453,7 @@ function Q34(){
 function Q35(){
   question_counter = 35
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_35"><div class="page"><div class="title">How often do you top up your prepaid phone?</div><div class="field"><select id="top_up"><option></option><option>9-12 times per month</option><option>12 and above times per month</option><option>1-5 times per month</option><option>6-9 times per month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"> </div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_35"><div class="page"><div class="title">How often do you top up your prepaid phone?</div><div class="field"><select id="top_up"><option></option><option>9-12 times per month</option><option>12 and above times per month</option><option>1-5 times per month</option><option>6-9 times per month</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"> </div></div></form>'
   userForm_35 = document.getElementById("userForm_35")
   if('top_up' in user_info_dict){
     let select_tag = document.getElementById("top_up")
@@ -1440,7 +1477,7 @@ function Q36(){
   check = false
   question_counter = 36
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_36"><div class="page"><div class="title">Do you have a moniready referral code?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="referal_code"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_36"><div class="page"><div class="title">Do you have a moniready referral code?</div><br><div class="field"><input type="number" placeholder="e.g. 3200" id="referal_code"></div><br><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_36 = document.getElementById("userForm_36")
   if('referal_code' in user_info_dict){
     let ref_code = document.getElementById("referal_code")
@@ -1457,7 +1494,7 @@ function Q36(){
 function Q37(){
   question_counter = 37
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:palevioletred;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:palevioletred;" type="submit" value="Submit"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Submit"></div></div></form>'
   userForm_37 = document.getElementById("userForm_37")
   if('find_us' in user_info_dict){
     let select_tag = document.getElementById("find_us")
@@ -1583,10 +1620,19 @@ function funPrevious(){
     else{
       Q26()
     }
-    
   }
   else if(question_counter==29){
-    Q28()
+    if(kids_amount_page==true){
+      Q28()
+    }
+    else if(add_loan_page==true){
+      Q27()
+    }
+    else{
+      Q26()
+    }
+    
+  
   }
   else if(question_counter==30){
     Q29()
@@ -1607,7 +1653,12 @@ function funPrevious(){
     Q34()
   }
   else if(question_counter==36){
-    Q35()
+    if(top_up_page==true){
+      Q35()
+    }
+    else{
+      Q34()
+    }
   }
   else if(question_counter==37){
     Q36()

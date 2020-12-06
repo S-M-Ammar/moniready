@@ -21,7 +21,10 @@ user_dict = {}
 #*******************************************Sheet API************************************************************#
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '16ne42-2Sp62SnTw221SPOdCmwJOvBaiq9CJ2apAWTOg'
-sheet_service = store_data.get_sheet_service()
+try:
+  sheet_service = store_data.get_sheet_service()
+except:
+  print("No connection found for google sheets")
 #*****************************************************************************************************************#
 
 
@@ -54,16 +57,14 @@ if not creds or not creds.valid:
     with open('token.pickle', 'wb') as token:
         pickle.dump(creds, token)
 
+
 service = build('gmail', 'v1', credentials=creds)
 
 
 #*******************************************----------************************************************************#
 
 
-payment_amount={}
-payment_amount['amount'] = 23200
-
-def check_application_for_rejection(home_salary,additonal_salary,mortgage_value,food_value,transport_value,light_expenditure,water_value,grooming_value,entertainment_value,current_loan_payment,kids_value):
+def check_application_for_rejection(home_salary,additonal_salary,mortgage_value,food_value,transport_value,light_expenditure,water_value,grooming_value,entertainment_value,current_loan_payment,kids_value,amount_borrowed,loan_time):
   salary = int(home_salary)
   if(additonal_salary!=""):
     salary = salary + int(additonal_salary)
@@ -73,8 +74,24 @@ def check_application_for_rejection(home_salary,additonal_salary,mortgage_value,
   if(current_loan_payment!=""):
     expense = expense + int(current_loan_payment)
 
+  payments = 23200
+  amount_borrowed = int(amount_borrowed)
+  loan_time = int(loan_time[0])
+
+  try:
+    payments = amount_borrowed/loan_time
+    interest_rate_amount = 0.16 * amount_borrowed
+    payments = payments + interest_rate_amount
+
+    try:
+      payments = round(payments,0)
+    except:
+      pass
+  except:
+    payments = 23200
+
   total = salary - expense
-  if(total>=payment_amount['amount']):
+  if(total>=payments):
     return False
   else:
     return True
@@ -147,20 +164,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
-
-
-@app.route("/index.html",methods=['GET','POST'])
-def home_1():
-    return render_template('index.html')
+    return render_template('form.html')
 
 
 @app.route("/form.html",methods=['GET','POST'])
 def form_1():
-    # print(request.form['payment'])
-    payment_amount['amount'] = 23200
-    if(request.form['payment']!=""):
-        payment_amount['amount'] = int(request.form['payment'])
     return render_template('form.html')
 
 
@@ -177,7 +185,7 @@ def end_page():
         x = json.dumps(request.form['params'])
         y = eval(json.loads(x))
         user_dict = y
-        check = check_application_for_rejection(y['salary'],y['additional_salary'],y['mortgage_expense'],y['food_expense'],y['transportation_expense'],y['light_expense'],y['water_expense'],y['grooming_expense'],y['entertainment_expense'],y['exist_loan_amount'],y['kids_expense'])
+        check = check_application_for_rejection(y['salary'],y['additional_salary'],y['mortgage_expense'],y['food_expense'],y['transportation_expense'],y['light_expense'],y['water_expense'],y['grooming_expense'],y['entertainment_expense'],y['exist_loan_amount'],y['kids_expense'],y['amount_borrowed'],y['loan_last'])
         if(check ==  False):
           pay_check = prediction_by_model(y['age'],y['amount_borrowed'],y['light_expense'],y['marital_status'],y['occupation_status'],y['working_with_employ'],y['residential_status'],y['living_with_address'],y['kids'],y['loan_purpose'])
           if(pay_check==True):
