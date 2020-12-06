@@ -661,7 +661,8 @@ function Q9(){
 function Q10(){
   question_counter = 10
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_10"><div class="page"><div class="title">Address</div><label style="margin-right: 30px;">Enter your current living address here</label><div class="field"><input type="text" placeholder="House # , Street # , ......" name="address" id="user_address"></div><div class="field"><input type="text" placeholder="Parish" name="parish" id="user_address_parish"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
+  //outerForm.innerHTML = '<form id="userForm_10"><div class="page"><div class="title">Address</div><label style="margin-right: 30px;">Enter your current living address here</label><div class="field"><input type="text" placeholder="House # , Street # , ......" name="address" id="user_address"></div><div class="field"><input type="text" placeholder="Parish" name="parish" id="user_address_parish"></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_10"><div class="page"><div class="title">Address</div><label style="margin-right: 30px;">Enter your current living address here</label><div class="field"><input type="text" placeholder="House # , Street # , ......" name="address" id="user_address"></div><div class="title">Parish</div><div class="field"><select id="user_address_parish"><option></option><option>Kingston</option><option>St Andrew</option><option>St Catherine</option><option>St Thomas</option><option>St Ann</option><option>St James</option><option>St Mary</option><option>Manchester</option><option>St Elizabeth</option><option>Westmoreland</option><option>Hanover</option><option>Trelawny</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Next"></div></div></form>'
   userForm_10 = document.getElementById("userForm_10")
   if("address" in user_info_dict){
     let address_ = document.getElementById("user_address");
@@ -677,7 +678,7 @@ function Q10(){
     alert("Enter Address. Invalid Address will not be accepted in future")
   }
   else if(parish.value==""){
-    alert("Enter Paris. Invalid Parish will not be accepted in future")
+    alert("Select Parish")
   }
   else{
     user_info_dict['address'] = address.value
@@ -1192,6 +1193,7 @@ function Q26(){
           Q28()
         }
         else{
+          user_info_dict['kids_expense'] = 0
           Q29()
         }
       }
@@ -1240,7 +1242,7 @@ function Q28(){
   userForm_28.addEventListener("submit",function(e){
     e.preventDefault()
     let number = document.getElementById("kids_amount")
-  if(number.value<0 || number.value==""){
+  if(number.value<=0 || number.value==""){
       alert("Enter Valid Amount")
   }
   else{
@@ -1494,7 +1496,7 @@ function Q36(){
 function Q37(){
   question_counter = 37
   outerForm.innerHTML = ""
-  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" style="background-color:#2fcab0;" type="submit" value="Submit"></div></div></form>'
+  outerForm.innerHTML = '<form id="userForm_37" action="end.html" method="POST"><div class="page"><div class="title">FINALLY ! How did you find out about us. Please press the button only once when submitting the form</div><div class="field"><select id="find_us"><option></option><option>Instagram</option><option>Google Search</option><option>Facebook</option><option>Word of mouth</option></select></div><div class="field btns"><input class="prev-2 prev" style="background-color:#2fcab0;" id="bt0" type="button" value="Previous" onclick="funPrevious()"><input class="next-2 next" id="bt1" style="background-color:#2fcab0;" type="submit" value="Submit"></div></div></form>'
   userForm_37 = document.getElementById("userForm_37")
   if('find_us' in user_info_dict){
     let select_tag = document.getElementById("find_us")
@@ -1517,6 +1519,8 @@ function Q37(){
       variables.name = "params"
       userForm_37.appendChild(variables)
       check = true
+      document.getElementById('bt1').disabled = true
+      document.getElementById('bt0').disabled = true
       userForm_37.submit()
     }
 
