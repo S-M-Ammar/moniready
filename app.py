@@ -191,7 +191,7 @@ def end_page():
           pay_check = prediction_by_model(y['age'],y['amount_borrowed'],y['light_expense'],y['marital_status'],y['occupation_status'],y['working_with_employ'],y['residential_status'],y['living_with_address'],y['kids'],y['loan_purpose'])
           if(pay_check==True):
               application_status = "Approved"
-              message = MIMEText('<img src="https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/order_attachments/ec68cc9e319befc071c7c5ce9b7c5392-1606136785189/MoniReady%20IG%20POSTS%20%284%29.png?__cld_token__=exp=1607445568~hmac=e27e7ab920bffe41719fc77691309d60d8814744c1d1d43faa2d3b74b478db45"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
+              message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
@@ -205,7 +205,7 @@ def end_page():
                   print("an error occured")
           else:
               application_status = "Rejected"
-              message = MIMEText('<img src="https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/order_attachments/ec68cc9e319befc071c7c5ce9b7c5392-1606136785189/MoniReady%20IG%20POSTS%20%284%29.png?__cld_token__=exp=1607445568~hmac=e27e7ab920bffe41719fc77691309d60d8814744c1d1d43faa2d3b74b478db45"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
+              message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
@@ -219,7 +219,7 @@ def end_page():
                   print("an error occured")
         else:
             application_status = "Rejected"
-            message = MIMEText('<img src="https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/order_attachments/36cfd4f1327fbd9233a7b00b2655459c-1606136692180/MoniReady%20IG%20POSTS%20%283%29.png?__cld_token__=exp=1607445568~hmac=708db92e32b1682d85b2453225d40d999a02482ddcd86f1621428ee6cfb5e7a1">','html')
+            message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK">','html')
             message['to']=y['email']
             message['from'] = "monireadyinfo@gmail.com"
             message['subject']="Moniready Application"
