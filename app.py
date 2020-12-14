@@ -191,7 +191,7 @@ def end_page():
           pay_check = prediction_by_model(y['age'],y['amount_borrowed'],y['light_expense'],y['marital_status'],y['occupation_status'],y['working_with_employ'],y['residential_status'],y['living_with_address'],y['kids'],y['loan_purpose'])
           if(pay_check==True):
               application_status = "Approved"
-              message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
+              message = MIMEText('<img src=""><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
@@ -205,7 +205,7 @@ def end_page():
                   print("an error occured")
           else:
               application_status = "Rejected"
-              message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK"><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
+              message = MIMEText('<img src=""><br><h2><a href="https://moniready.aidaform.com/moniready-upload-form">Click Here For Further Procedure</a></h2>','html')
               message['to']=y['email']
               message['from'] = "monireadyinfo@gmail.com"
               message['subject']="Moniready Application"
@@ -219,7 +219,7 @@ def end_page():
                   print("an error occured")
         else:
             application_status = "Rejected"
-            message = MIMEText('<img src="https://drive.google.com/drive/u/0/folders/10ONKl2Tc_eChKsUQJICiMzx9M-nh6NHK">','html')
+            message = MIMEText('<img src="">','html')
             message['to']=y['email']
             message['from'] = "monireadyinfo@gmail.com"
             message['subject']="Moniready Application"
